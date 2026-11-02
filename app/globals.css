@@ -1,0 +1,124 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "./tokens.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--s0l-text-font-family-primary);
+  --font-sans: var(--s0l-text-font-family-primary);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+}
+
+/*
+ * shadcn semantic layer, aliased to the S0L tokens from app/tokens.css.
+ * The S0L Mode tokens already switch between light and dark, so this layer is
+ * mode-independent. It is redeclared on the same scopes as the Mode tokens so
+ * it follows .dark and data-accent wherever they are set.
+ */
+:root,
+.light,
+.dark,
+[data-accent] {
+  --background: var(--s0l-background-primary);
+  --foreground: var(--s0l-text-primary);
+  --card: var(--s0l-background-surface);
+  --card-foreground: var(--s0l-text-primary);
+  --popover: var(--s0l-background-primary);
+  --popover-foreground: var(--s0l-text-primary);
+  --primary: var(--s0l-button-primary-standard-background);
+  --primary-foreground: var(--s0l-button-primary-standard-label);
+  --secondary: var(--s0l-background-secondary);
+  --secondary-foreground: var(--s0l-text-primary);
+  --muted: var(--s0l-background-secondary);
+  --muted-foreground: var(--s0l-text-secondary);
+  --accent: var(--s0l-background-hover);
+  --accent-foreground: var(--s0l-text-primary);
+  --destructive: var(--s0l-text-danger-display);
+  --border: var(--s0l-border-secondary);
+  --input: var(--s0l-border-primary);
+  --ring: var(--s0l-border-accent-strong);
+  --chart-1: var(--s0l-chart-1);
+  --chart-2: var(--s0l-chart-2);
+  --chart-3: var(--s0l-chart-3);
+  --chart-4: var(--s0l-chart-4);
+  --chart-5: var(--s0l-chart-5);
+  --radius: var(--s0l-border-radius-large);
+  --sidebar: var(--s0l-background-secondary);
+  --sidebar-foreground: var(--s0l-text-primary);
+  --sidebar-primary: var(--s0l-button-primary-standard-background);
+  --sidebar-primary-foreground: var(--s0l-button-primary-standard-label);
+  --sidebar-accent: var(--s0l-background-hover);
+  --sidebar-accent-foreground: var(--s0l-text-primary);
+  --sidebar-border: var(--s0l-border-secondary);
+  --sidebar-ring: var(--s0l-border-accent-strong);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* Figma .Spinner Animation: one bar at a time goes to 100% opacity with a
+   90 / 80 / 70% tail behind it, the rest stay at 60%. Each bar runs the same
+   steps with a delay of one step per position, so the highlight moves
+   clockwise while the bars themselves stay still. */
+@theme {
+  --animate-spinner-bar: spinner-bar 0.8s step-end infinite;
+
+  @keyframes spinner-bar {
+    0% {
+      opacity: 1;
+    }
+    12.5% {
+      opacity: 0.9;
+    }
+    25% {
+      opacity: 0.8;
+    }
+    37.5% {
+      opacity: 0.7;
+    }
+    50%,
+    100% {
+      opacity: 0.6;
+    }
+  }
+}
