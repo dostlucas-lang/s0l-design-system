@@ -1,11 +1,31 @@
-@import "tailwindcss";
+/*
+ * S0L theme for Tailwind CSS v4: tokens, the shadcn semantic layer, custom
+ * variants and utilities, and base styles. It does not import Tailwind itself,
+ * so an app that already uses Tailwind v4 adds it after its own import:
+ *
+ *   @import "tailwindcss";
+ *   @import "@s0l/design-system/theme.css";
+ *
+ * Storybook loads it through styles/globals.css. The published copy in dist/
+ * also adds the @source for the compiled components (see scripts/build-css.ts).
+ */
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import "./shadcn.css";
 @import "./tokens.css";
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Font families. The Text/Font Family tokens read these variables (see
+ * styles/tokens.css); fonts.css loads the font files from @fontsource.
+ */
+:root {
+  --font-barlow: "Barlow";
+  --font-inter: "Inter";
+}
+
 @theme inline {
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-heading: var(--s0l-text-font-family-primary);
   --font-sans: var(--s0l-text-font-family-primary);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -37,7 +57,7 @@
 }
 
 /*
- * shadcn semantic layer, aliased to the S0L tokens from app/tokens.css.
+ * shadcn semantic layer, aliased to the S0L tokens from styles/tokens.css.
  * The S0L Mode tokens already switch between light and dark, so this layer is
  * mode-independent. It is redeclared on the same scopes as the Mode tokens so
  * it follows .dark and data-accent wherever they are set.
@@ -92,7 +112,7 @@
     cursor: pointer;
   }
   html {
-    @apply font-sans;
+    @apply font-sans antialiased;
   }
 }
 

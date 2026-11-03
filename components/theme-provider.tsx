@@ -3,10 +3,24 @@
 import * as React from "react"
 import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes"
 
+type ThemeProviderProps = React.ComponentProps<typeof NextThemesProvider> & {
+  /**
+   * Toggle light/dark with the "d" key (outside text fields). Off by default
+   * so the provider never takes over a key in the app that uses it.
+   */
+  hotkey?: boolean
+}
+
+/**
+ * Light/Dark mode as the `.dark` class on <html> (next-themes, which works in
+ * any React app, not only Next.js). Accent modes are separate: set
+ * `data-accent` on any element.
+ */
 function ThemeProvider({
   children,
+  hotkey = false,
   ...props
-}: React.ComponentProps<typeof NextThemesProvider>) {
+}: ThemeProviderProps) {
   return (
     <NextThemesProvider
       attribute="class"
@@ -15,7 +29,7 @@ function ThemeProvider({
       disableTransitionOnChange
       {...props}
     >
-      <ThemeHotkey />
+      {hotkey && <ThemeHotkey />}
       {children}
     </NextThemesProvider>
   )
@@ -68,4 +82,4 @@ function ThemeHotkey() {
   return null
 }
 
-export { ThemeProvider }
+export { ThemeProvider, useTheme, type ThemeProviderProps }

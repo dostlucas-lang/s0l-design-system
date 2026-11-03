@@ -1,12 +1,59 @@
 {
-  "name": "s0l-design-system",
-  "version": "0.0.1",
+  "name": "@s0l/design-system",
+  "version": "0.1.0",
+  "description": "S0L design system: React components, design tokens and Tailwind CSS v4 theme, ready for Vite apps and Figma Make kits.",
+  "keywords": [
+    "design-system",
+    "react",
+    "tailwindcss",
+    "design-tokens",
+    "figma-make"
+  ],
+  "homepage": "https://github.com/dostlucas-lang/s0l-design-system#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dostlucas-lang/s0l-design-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dostlucas-lang/s0l-design-system/issues"
+  },
   "type": "module",
-  "private": true,
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "guidelines",
+    "README.md"
+  ],
+  "types": "./dist/src/index.d.ts",
+  "module": "./dist/src/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js"
+    },
+    "./tokens": {
+      "types": "./dist/src/tokens.d.ts",
+      "default": "./dist/src/tokens.js"
+    },
+    "./tokens.json": "./dist/s0l.tokens.json",
+    "./styles.css": "./dist/styles.css",
+    "./theme.css": "./dist/theme.css",
+    "./tokens.css": "./dist/tokens.css",
+    "./fonts.css": "./dist/fonts.css",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "node scripts/check-exports.ts && npm run guidelines && npm run build:lib && npm run build:css",
+    "build:lib": "vite build -c vite.lib.config.ts",
+    "build:css": "node scripts/build-css.ts",
+    "guidelines": "node scripts/build-guidelines.ts",
+    "check:package": "publint --strict && attw --pack . --profile esm-only --exclude-entrypoints ./styles.css ./theme.css ./tokens.css ./fonts.css",
+    "prepublishOnly": "npm run build && npm run check:package",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
@@ -14,8 +61,21 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
+  },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
+    "@fontsource/barlow": "^5.2.8",
+    "@fontsource/geist-mono": "^5.2.7",
+    "@fontsource/inter": "^5.2.8",
     "@hugeicons/core-free-icons": "^4.3.5",
     "@hugeicons/react": "^1.1.10",
     "@tanstack/react-table": "^9.3.1",
@@ -24,31 +84,38 @@
     "date-fns": "^4.4.0",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.5.0",
-    "next": "16.4.2",
     "next-themes": "^0.4.6",
-    "react": "19.3.0",
     "react-day-picker": "^10.0.2",
-    "react-dom": "19.3.0",
-    "shadcn": "^4.22.1",
     "tw-animate-css": "^1.4.0"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@eslint/js": "^9.39.5",
     "@storybook/addon-a11y": "^10.6.3",
     "@storybook/addon-docs": "^10.6.3",
     "@storybook/addon-themes": "^10.6.3",
-    "@storybook/nextjs-vite": "^10.6.3",
-    "@tailwindcss/postcss": "^4",
+    "@storybook/react-vite": "^10.6.3",
+    "@tailwindcss/postcss": "^4.3.4",
+    "@tailwindcss/vite": "^4.3.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.4.2",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-storybook": "^10.6.3",
+    "globals": "^16.4.0",
+    "postcss": "^8.5.31",
     "prettier": "^3.9.10",
     "prettier-plugin-tailwindcss": "^0.8.1",
+    "publint": "^0.3.15",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "shadcn": "^4.22.1",
     "storybook": "^10.6.3",
-    "tailwindcss": "^4",
+    "tailwindcss": "^4.3.4",
     "typescript": "^5",
-    "vite": "^8.3.5"
+    "typescript-eslint": "^8.72.0",
+    "vite": "^8.3.5",
+    "vite-plugin-dts": "^4.5.4"
   }
 }

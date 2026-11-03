@@ -1,5 +1,5 @@
 import * as React from "react"
-import type { Meta, StoryObj } from "@storybook/nextjs-vite"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { useArgs } from "storybook/preview-api"
 
 import { ChartLine } from "@/components/ui/chart-line"

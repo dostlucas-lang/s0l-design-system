@@ -1,0 +1,15 @@
+/*
+ * S0L font files, self-hosted through @fontsource (no request to Google Fonts).
+ * Barlow is Text/Font Family/Primary, Inter is Secondary and Geist Mono is the
+ * font-mono family. The weights match the ones the Figma text styles use.
+ */
+@import "@fontsource/barlow/300.css";
+@import "@fontsource/barlow/400.css";
+@import "@fontsource/barlow/500.css";
+@import "@fontsource/barlow/600.css";
+@import "@fontsource/barlow/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/geist-mono/400.css";

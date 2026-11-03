@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/nextjs-vite"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 
 import { Backdrop } from "@/components/ui/backdrop"
 import { Button } from "@/components/ui/button"

@@ -1,17 +1,9 @@
-import type { Preview } from "@storybook/nextjs-vite"
+import type { Preview } from "@storybook/react-vite"
 import { withThemeByClassName } from "@storybook/addon-themes"
 
-import "../app/globals.css"
-import { fontVariables } from "@/lib/fonts"
+import "../styles/globals.css"
 import { tokens } from "@/tokens/data"
 import { getCollection, slug } from "@/tokens/lib"
-
-// Same <html> classes as app/layout.tsx, so tokens resolve the same fonts.
-document.documentElement.classList.add(
-  "antialiased",
-  "font-sans",
-  ...fontVariables.split(" ")
-)
 
 // One toolbar item per Accent mode in the Figma variables.
 const accents = getCollection(tokens, "Accent").modes.map((name) => ({
@@ -25,7 +17,6 @@ const preview: Preview = {
     options: {
       storySort: { order: ["Foundations", "Components"] },
     },
-    nextjs: { appDirectory: true },
     controls: {
       matchers: {
         color: /(background|color)$/i,

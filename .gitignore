@@ -11,12 +11,10 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
-
-# production
-/build
+# package build
+/dist
+*.tgz
+/consumer-test
 
 # misc
 .DS_Store
@@ -31,13 +29,13 @@ pnpm-debug.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# vercel
-.vercel
-
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
 # storybook
 /storybook-static
 *storybook.log
+
+# leftovers of the former Next.js app
+/.next/
+next-env.d.ts

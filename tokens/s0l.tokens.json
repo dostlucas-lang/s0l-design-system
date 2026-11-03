@@ -1,5 +1,5 @@
 {
-  "$description": "Snapshot of the variable collections and styles of the [S0L] DESIGN SYSTEM Figma file. Edit in Figma, re-sync this file, then run `npm run tokens` to regenerate app/tokens.css. Single-mode values are scalars, multi-mode values are arrays ordered like `modes`, and `{Collection:Path}` is an alias to another variable.",
+  "$description": "Snapshot of the variable collections and styles of the [S0L] DESIGN SYSTEM Figma file. Edit in Figma, re-sync this file, then run `npm run tokens` to regenerate styles/tokens.css. Single-mode values are scalars, multi-mode values are arrays ordered like `modes`, and `{Collection:Path}` is an alias to another variable.",
   "$source": {
     "file": "[S0L] DESIGN SYSTEM",
     "url": "https://www.figma.com/design/kwq7CHuZ7LHDCjTQojAisa/-S0L--DESIGN-SYSTEM",

@@ -240,7 +240,6 @@ function ToastList() {
       <Toast key={toastItem.id} toast={toastItem} data-color={color}>
         <ToastContent>
           {data.image ? (
-            // eslint-disable-next-line @next/next/no-img-element
             <img
               data-slot="toast-image"
               src={data.image}

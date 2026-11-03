@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils"
 // it with `text-current`.
 //
 // Like the Figma .Spinner Animation partial, the bars don't rotate: each one
-// runs `animate-spinner-bar` (app/globals.css) one step later than the bar
+// runs `animate-spinner-bar` (styles/theme.css) one step later than the bar
 // before it, so a 100% bar with a 90 / 80 / 70% tail moves clockwise,
 // starting at the bottom as in Frame 2.
 const spinnerSizes = {

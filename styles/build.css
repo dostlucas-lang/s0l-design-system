@@ -1,0 +1,8 @@
+/*
+ * Entry of the compiled dist/styles.css, for apps without Tailwind: Tailwind
+ * itself plus every utility the components use, and nothing from the stories.
+ */
+@import "tailwindcss" source(none);
+@import "./theme.css";
+
+@source "../components";
