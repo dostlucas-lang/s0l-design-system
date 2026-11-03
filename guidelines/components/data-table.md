@@ -3,7 +3,7 @@
 # Data Table
 
 ```tsx
-import { DataTable, DataTableBulkActionBar, DataTableHeader, DataTablePagination } from "@s0l/design-system"
+import { DataTable, DataTableBulkActionBar, DataTableHeader, DataTablePagination } from "@lucasdost/design-system"
 ```
 
 A Table with its header, search, bulk actions and pagination. Mirrors the Figma Data Table: give it `rows` and `columns`, and the search, the sorting, the selection across pages and the pagination work by themselves.
@@ -111,6 +111,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `DataTable` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `DataTable` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

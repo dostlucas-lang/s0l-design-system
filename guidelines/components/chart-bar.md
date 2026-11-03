@@ -3,7 +3,7 @@
 # Chart Bar
 
 ```tsx
-import { ChartBar } from "@s0l/design-system"
+import { ChartBar } from "@lucasdost/design-system"
 ```
 
 A stacked bar with its Legend. Mirrors the Figma Chart Bar: give it `items`, and each segment is as wide as its share of the values. The total row is always the sum of the items. With a `max` above that sum, the rest of the Track shows, as in Items=1. It takes 100% of the width of its container.
@@ -44,6 +44,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `ChartBar` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `ChartBar` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

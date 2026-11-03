@@ -3,7 +3,7 @@
 # Backdrop
 
 ```tsx
-import { Backdrop } from "@s0l/design-system"
+import { Backdrop } from "@lucasdost/design-system"
 ```
 
 Dims the screen behind an overlay. Mirrors the Figma Backdrop: Background/Overlay, no blur. Modal, Drawer and Bottom Sheet already render it, and the Dropdown and Date Picker get it from the Bottom Sheet on mobile.
@@ -25,6 +25,6 @@ Mirrors the Figma Backdrop: Background/Overlay over the whole screen, no blur. M
 
 ## Rules
 
-- Import `Backdrop` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Backdrop` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

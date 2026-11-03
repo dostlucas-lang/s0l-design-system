@@ -3,7 +3,7 @@
 # Bottom Bar
 
 ```tsx
-import { BottomBar, BottomBarItem } from "@s0l/design-system"
+import { BottomBar, BottomBarItem } from "@lucasdost/design-system"
 ```
 
 The main navigation of a mobile screen: 2 to 4 destinations in a floating pill. Mirrors the Figma Bottom Bar (Items=2 / 3 / 4) and its .Bottom Bar Button (State: Default / Pressed / Active / Disabled + Focus, Show Badge). `BottomBar` only draws the bar; pin it to the bottom of the screen where it's used. Each `BottomBarItem` is a `<button>`, or a link through `render`.
@@ -46,6 +46,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `BottomBar` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `BottomBar` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

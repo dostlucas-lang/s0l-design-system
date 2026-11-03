@@ -3,7 +3,7 @@
 # Accordion
 
 ```tsx
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent, accordionItemVariants, accordionRibbonVariants } from "@s0l/design-system"
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent, accordionItemVariants, accordionRibbonVariants } from "@lucasdost/design-system"
 ```
 
 Stacked headings that reveal a section of content. Mirrors the Figma Accordion: Style (Divider / Container) and Ribbon color. The header is the .List Item Content Left, with the same props as List Item (`description`, `details`, `tag`, `dragHandle`, `checkbox`, `icon`, `iconColor`, `contentLeft`) on AccordionTrigger and `children` as the label. Stop propagation in a nested checkbox so it doesn't toggle the item.
@@ -76,6 +76,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `Accordion` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Accordion` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

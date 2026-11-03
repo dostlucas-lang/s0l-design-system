@@ -3,7 +3,7 @@
 # Empty State
 
 ```tsx
-import { EmptyState, EmptyStateIcon, EmptyStateHeader, EmptyStateTitle, EmptyStateDescription, EmptyStateActions, emptyStateVariants } from "@s0l/design-system"
+import { EmptyState, EmptyStateIcon, EmptyStateHeader, EmptyStateTitle, EmptyStateDescription, EmptyStateActions, emptyStateVariants } from "@lucasdost/design-system"
 ```
 
 Placeholder shown when there is no content to display. The icon is an Icon Colors with container.
@@ -42,6 +42,6 @@ Mirrors the Figma Empty State component: Direction (Inline / Stacked) sets how t
 
 ## Rules
 
-- Import `EmptyState` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `EmptyState` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

@@ -1,4 +1,4 @@
-// Library build of @s0l/design-system: ESM JavaScript and .d.ts types in dist/.
+// Library build of @lucasdost/design-system: ESM JavaScript and .d.ts types in dist/.
 // Run with `npm run build:lib`; the CSS is built by scripts/build-css.ts.
 //
 // - One output file per source module (preserveModules), so apps only bundle

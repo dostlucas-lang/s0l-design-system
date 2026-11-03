@@ -6,7 +6,7 @@ on:
 
 jobs:
   publish:
-    name: 'Publish @s0l/design-system to npm'
+    name: 'Publish @lucasdost/design-system to npm'
     runs-on: ubuntu-latest
     permissions:
       contents: read

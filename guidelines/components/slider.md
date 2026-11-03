@@ -3,7 +3,7 @@
 # Slider
 
 ```tsx
-import { Slider } from "@s0l/design-system"
+import { Slider } from "@lucasdost/design-system"
 ```
 
 Selects a value or range within bounds. Mirrors the Figma Slider component: one value or a range (Property 1), with the optional Scale.
@@ -48,6 +48,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `Slider` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Slider` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

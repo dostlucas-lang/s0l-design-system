@@ -4,12 +4,12 @@ S0L uses Hugeicons (free set) drawn with the Figma 1.8 stroke.
 
 ```tsx
 import { Search01Icon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@s0l/design-system"
+import { HugeiconsIcon } from "@lucasdost/design-system"
 
 <HugeiconsIcon icon={Search01Icon} className="size-5 text-icon-secondary" />
 ```
 
-- Always render icons through `HugeiconsIcon` from `@s0l/design-system`, never
+- Always render icons through `HugeiconsIcon` from `@lucasdost/design-system`, never
   from `@hugeicons/react` (wrong stroke width).
 - Find icons by name in `@hugeicons/core-free-icons`: names end in `Icon` and
   often have a number (`ArrowRight01Icon`, `Delete02Icon`, `UserIcon`).

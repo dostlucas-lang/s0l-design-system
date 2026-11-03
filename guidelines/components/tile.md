@@ -3,7 +3,7 @@
 # Tile
 
 ```tsx
-import { Tile, TileCarousel, tileSurfaceVariants } from "@s0l/design-system"
+import { Tile, TileCarousel, tileSurfaceVariants } from "@lucasdost/design-system"
 ```
 
 A shortcut to an action or a page: an icon and a label on a raised surface. Mirrors the Figma Tile: Size (Small / Medium / Large) × State (Default / Hover / Disabled) + Focus. Renders a `<button>`, or a link through `render`. `TileCarousel` is the Figma Tile Carousel: a row of Tiles between two arrows.
@@ -66,6 +66,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `Tile` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Tile` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

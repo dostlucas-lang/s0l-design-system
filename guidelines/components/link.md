@@ -3,7 +3,7 @@
 # Link
 
 ```tsx
-import { Link, linkVariants } from "@s0l/design-system"
+import { Link, linkVariants } from "@lucasdost/design-system"
 ```
 
 A text link to another page or section. Mirrors the Figma Link component: Color (Neutral / Accent, named Brand in Figma / Danger / Inverse) × Size (Small / Medium) × State (Default / Hover / Disabled), with Icon Left and Icon Right. Hover underlines the label and follows the browser; Disabled comes from props.
@@ -49,6 +49,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `Link` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Link` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

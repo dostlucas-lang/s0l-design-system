@@ -3,7 +3,7 @@
 # Avatar
 
 ```tsx
-import { Avatar, AvatarImage, AvatarFallback, avatarVariants } from "@s0l/design-system"
+import { Avatar, AvatarImage, AvatarFallback, avatarVariants } from "@lucasdost/design-system"
 ```
 
 An image element with a fallback for representing the user. Mirrors the Figma Avatar: Size × Color, Type Photo or Initials.
@@ -34,6 +34,6 @@ Mirrors the Figma Avatar component. Type is implicit: AvatarImage renders Type=P
 
 ## Rules
 
-- Import `Avatar` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Avatar` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

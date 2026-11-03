@@ -3,7 +3,7 @@
 # Calendar
 
 ```tsx
-import { Calendar, CalendarButton, CalendarDayButton } from "@s0l/design-system"
+import { Calendar, CalendarButton, CalendarDayButton } from "@lucasdost/design-system"
 ```
 
 Lets users pick a day, a month, a year or a range of days. Mirrors the Figma Date Picker panel: Property 1 = Day / Month / Year, plus Range. It isn't a floating element, so it has no border or shadow; the Date Picker adds them around it.
@@ -54,6 +54,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `Calendar` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Calendar` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

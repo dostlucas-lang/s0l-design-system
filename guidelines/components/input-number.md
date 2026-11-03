@@ -3,7 +3,7 @@
 # Input Number
 
 ```tsx
-import { InputNumber } from "@s0l/design-system"
+import { InputNumber } from "@lucasdost/design-system"
 ```
 
 A number field with Minus and Plus buttons. Mirrors the Figma Input Number component: State (Default / Hover / Active / Disabled / Read Only) × Filled × Error. Hover, Active and Filled follow the browser; Disabled, Read Only and Error come from props. Arrow Up / Down also step the value, within `min` and `max`.
@@ -40,6 +40,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `InputNumber` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `InputNumber` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

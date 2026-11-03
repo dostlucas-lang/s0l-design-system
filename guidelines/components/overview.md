@@ -2,7 +2,7 @@
 
 # Components
 
-Every component is a named export of `@s0l/design-system`. Read the file of a component before using it: it lists its parts, variants and props.
+Every component is a named export of `@lucasdost/design-system`. Read the file of a component before using it: it lists its parts, variants and props.
 
 | Component | What it is | File | Exports |
 | --- | --- | --- | --- |

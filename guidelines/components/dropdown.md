@@ -3,7 +3,7 @@
 # Dropdown
 
 ```tsx
-import { dropdownPopupClassName, dropdownBodyClassName, dropdownItemClassName, DropdownItemCheck, DropdownItemIcon, DropdownItemText, Dropdown, DropdownPortal, DropdownTrigger, DropdownContent, DropdownGroup, DropdownItem, DropdownCheckboxItem, DropdownRadioGroup, DropdownRadioItem, DropdownSeparator, DropdownSub, DropdownSubTrigger, DropdownSubContent } from "@s0l/design-system"
+import { dropdownPopupClassName, dropdownBodyClassName, dropdownItemClassName, DropdownItemCheck, DropdownItemIcon, DropdownItemText, Dropdown, DropdownPortal, DropdownTrigger, DropdownContent, DropdownGroup, DropdownItem, DropdownCheckboxItem, DropdownRadioGroup, DropdownRadioItem, DropdownSeparator, DropdownSub, DropdownSubTrigger, DropdownSubContent } from "@lucasdost/design-system"
 ```
 
 A menu of actions or options triggered by a button. Mirrors the Figma Dropdown: Type (Actions / Selection Single / Selection Multiple) × Sections (1–4). Mobile=True shows the same menu as the Figma Bottom Sheet.
@@ -101,6 +101,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `DropdownItemCheck` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `DropdownItemCheck` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

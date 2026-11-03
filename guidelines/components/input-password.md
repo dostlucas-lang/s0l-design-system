@@ -3,7 +3,7 @@
 # Input Password
 
 ```tsx
-import { InputPassword } from "@s0l/design-system"
+import { InputPassword } from "@lucasdost/design-system"
 ```
 
 A password field built on Input Text, with Button View to show or hide the characters. Mirrors the Figma Input Password component: State (Default / Hover / Active / Disabled / Read Only) × Filled × Error.
@@ -37,6 +37,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `InputPassword` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `InputPassword` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

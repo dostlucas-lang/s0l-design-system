@@ -1,4 +1,4 @@
-# @s0l/design-system
+# @lucasdost/design-system
 
 React components, design tokens and a Tailwind CSS v4 theme for the
 [[S0L] DESIGN SYSTEM](https://www.figma.com/design/kwq7CHuZ7LHDCjTQojAisa/-S0L--DESIGN-SYSTEM)
@@ -7,7 +7,7 @@ Figma file. Built for Vite apps and [Figma Make](https://help.figma.com/hc/en-us
 ## Use it in an app
 
 ```bash
-npm install @s0l/design-system
+npm install @lucasdost/design-system
 ```
 
 Requires React 19. With Tailwind CSS v4 (Figma Make, Vite + Tailwind), in the
@@ -15,20 +15,20 @@ main CSS file:
 
 ```css
 @import "tailwindcss";
-@import "@s0l/design-system/theme.css";
+@import "@lucasdost/design-system/theme.css";
 ```
 
 Without Tailwind, import the precompiled CSS instead:
 
 ```ts
-import "@s0l/design-system/styles.css"
+import "@lucasdost/design-system/styles.css"
 ```
 
 In both cases, load the fonts once in the app entry and use the components:
 
 ```tsx
-import "@s0l/design-system/fonts.css"
-import { Button, ThemeProvider } from "@s0l/design-system"
+import "@lucasdost/design-system/fonts.css"
+import { Button, ThemeProvider } from "@lucasdost/design-system"
 
 export function App() {
   return (
@@ -46,13 +46,13 @@ every component; Figma Make reads it from the package.
 
 | Import | Content |
 | --- | --- |
-| `@s0l/design-system` | Every component, `ThemeProvider`, `useTheme`, `cn`. |
-| `@s0l/design-system/tokens` | The Figma variables as data, with helpers. |
-| `@s0l/design-system/tokens.json` | The raw Figma variables snapshot. |
-| `@s0l/design-system/theme.css` | Tailwind v4 theme: tokens as utilities, base styles, component classes. |
-| `@s0l/design-system/styles.css` | Precompiled CSS for apps without Tailwind. |
-| `@s0l/design-system/tokens.css` | Only the `--s0l-*` CSS variables. |
-| `@s0l/design-system/fonts.css` | Barlow, Inter and Geist Mono (@fontsource). |
+| `@lucasdost/design-system` | Every component, `ThemeProvider`, `useTheme`, `cn`. |
+| `@lucasdost/design-system/tokens` | The Figma variables as data, with helpers. |
+| `@lucasdost/design-system/tokens.json` | The raw Figma variables snapshot. |
+| `@lucasdost/design-system/theme.css` | Tailwind v4 theme: tokens as utilities, base styles, component classes. |
+| `@lucasdost/design-system/styles.css` | Precompiled CSS for apps without Tailwind. |
+| `@lucasdost/design-system/tokens.css` | Only the `--s0l-*` CSS variables. |
+| `@lucasdost/design-system/fonts.css` | Barlow, Inter and Geist Mono (@fontsource). |
 
 ## Develop
 

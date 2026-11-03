@@ -31,7 +31,7 @@ const result = await postcss([
 })
 writeFileSync(
   path.join(dist, "styles.css"),
-  `/* @s0l/design-system — compiled styles (Tailwind CSS v4 + S0L theme). */\n${result.css}`
+  `/* @lucasdost/design-system — compiled styles (Tailwind CSS v4 + S0L theme). */\n${result.css}`
 )
 
 // Tailwind sources

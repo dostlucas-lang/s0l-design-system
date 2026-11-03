@@ -3,7 +3,7 @@
 # Timeline
 
 ```tsx
-import { Timeline, TimelineItem } from "@s0l/design-system"
+import { Timeline, TimelineItem } from "@lucasdost/design-system"
 ```
 
 Lists events in order along a dotted line. Mirrors the Figma Timeline and Timeline Item: date, title, Show Tag, description, Show Actions and Show Action 2.
@@ -42,6 +42,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `Timeline` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Timeline` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

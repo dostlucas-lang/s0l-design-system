@@ -3,7 +3,7 @@
 # Popover
 
 ```tsx
-import { Popover, PopoverContent, PopoverDescription, PopoverHeader, PopoverTitle, PopoverTrigger } from "@s0l/design-system"
+import { Popover, PopoverContent, PopoverDescription, PopoverHeader, PopoverTitle, PopoverTrigger } from "@lucasdost/design-system"
 ```
 
 Rich content in a floating panel anchored to a trigger.
@@ -50,6 +50,6 @@ From the Storybook story; names like `args` or `label` are the story controls.
 
 ## Rules
 
-- Import `Popover` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Popover` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

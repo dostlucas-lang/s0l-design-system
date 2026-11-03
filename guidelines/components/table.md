@@ -3,7 +3,7 @@
 # Table
 
 ```tsx
-import { compareSortValues, Table, TableActions, TableBody, TableCell, TableCellAccordion, TableCellActions, TableCellSelection, TableCellSkeleton, TableEmpty, TableHead, TableHeader, TableRow, TableRowAccordion, tableCellVariants } from "@s0l/design-system"
+import { compareSortValues, Table, TableActions, TableBody, TableCell, TableCellAccordion, TableCellActions, TableCellSelection, TableCellSkeleton, TableEmpty, TableHead, TableHeader, TableRow, TableRowAccordion, tableCellVariants } from "@lucasdost/design-system"
 ```
 
 Displays tabular data. Mirrors the Figma Table: Table sets the variants, Loading included, and each row, column and cell has its own props. Selection, Accordion, Actions and Skeleton cells are their own components.
@@ -169,6 +169,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `Table` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Table` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

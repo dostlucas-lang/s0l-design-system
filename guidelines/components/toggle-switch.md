@@ -3,7 +3,7 @@
 # Toggle Switch
 
 ```tsx
-import { ToggleSwitch } from "@s0l/design-system"
+import { ToggleSwitch } from "@lucasdost/design-system"
 ```
 
 Toggles a setting on or off. Mirrors the Figma Toggle Switch component: State (Default / Read Only / Disabled) × Active × Show Label × Label Position.
@@ -43,6 +43,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `ToggleSwitch` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `ToggleSwitch` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

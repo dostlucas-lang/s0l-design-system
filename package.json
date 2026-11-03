@@ -1,5 +1,5 @@
 {
-  "name": "@s0l/design-system",
+  "name": "@lucasdost/design-system",
   "version": "1.0.0",
   "description": "S0L design system: React components, design tokens and Tailwind CSS v4 theme, ready for Vite apps and Figma Make kits.",
   "keywords": [

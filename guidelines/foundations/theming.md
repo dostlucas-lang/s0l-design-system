@@ -8,7 +8,7 @@ The `.dark` class on an element (normally `<html>`) switches everything inside
 it to the dark values. `ThemeProvider` from the package manages it:
 
 ```tsx
-import { ThemeProvider, useTheme } from "@s0l/design-system"
+import { ThemeProvider, useTheme } from "@lucasdost/design-system"
 
 <ThemeProvider defaultTheme="system">{children}</ThemeProvider>
 

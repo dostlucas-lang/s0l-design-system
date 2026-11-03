@@ -3,7 +3,7 @@
 # Modal
 
 ```tsx
-import { Modal, ModalTrigger, ModalClose, ModalPortal, ModalOverlay, ModalContent, ModalHeader, ModalTitle, ModalBody, ModalDescription, ModalFooter } from "@s0l/design-system"
+import { Modal, ModalTrigger, ModalClose, ModalPortal, ModalOverlay, ModalContent, ModalHeader, ModalTitle, ModalBody, ModalDescription, ModalFooter } from "@lucasdost/design-system"
 ```
 
 A window overlaid on the page.
@@ -69,6 +69,6 @@ Mirrors the Figma Modal: a centered 496px card with Header (Title + close), a sc
 
 ## Rules
 
-- Import `Modal` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Modal` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

@@ -3,7 +3,7 @@
 # Label
 
 ```tsx
-import { Label, labelVariants } from "@s0l/design-system"
+import { Label, labelVariants } from "@lucasdost/design-system"
 ```
 
 The label of a control, with the optional requirement text and Info icon, which shows the `info` text in a tooltip. Mirrors the Figma .Label, .Label Read Only and .Label Disabled components as one component: `state` picks the colors. The Input components already render it from their `label` prop.
@@ -49,6 +49,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `Label` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Label` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).
