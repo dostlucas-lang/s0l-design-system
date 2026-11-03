@@ -6,49 +6,69 @@
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent, accordionItemVariants, accordionRibbonVariants } from "@lucasdost/design-system"
 ```
 
-Stacked headings that reveal a section of content. Mirrors the Figma Accordion: Style (Divider / Container) and Ribbon color. The header is the .List Item Content Left, with the same props as List Item (`description`, `details`, `tag`, `dragHandle`, `checkbox`, `icon`, `iconColor`, `contentLeft`) on AccordionTrigger and `children` as the label. Stop propagation in a nested checkbox so it doesn't toggle the item.
+Serve para organizar conteúdos em seções expansíveis, exibindo ou ocultando informações sob demanda para reduzir a complexidade visual.
 
 ## Example
 
 From the Storybook story; names like `args` or `label` are the story controls.
 
 ```tsx
-<Accordion {...args} defaultValue={["shipping"]} className="w-md">
-  {items.map((item) => (
-    <AccordionItem
-      key={item.value}
-      value={item.value}
-      showRibbon={showRibbon}
-      ribbon={ribbon}
-    >
-      <AccordionTrigger
-        description={showDescription ? item.description : undefined}
-        details={showDetails ? details : undefined}
-        detailsTrend={trendOf(detailsTrend)}
-        tag={showTag ? tag : undefined}
-        dragHandle={showDragHandle}
-        checkbox={
-          showCheckbox && (
-            <Checkbox
-              aria-label={item.title}
-              onClick={(event) => event.stopPropagation()}
-            />
-          )
-        }
-        icon={showIcon ? (findHugeicon(icon) ?? CommandIcon) : undefined}
-        iconColor={iconColor}
+<Accordion
+  variant={args.variant}
+  allowMultiple={args.allowMultiple}
+  value={expanded}
+  onValueChange={setExpanded}
+>
+  {items.map((item, index) => {
+    const f = fields[index]
+    return (
+      <AccordionItem
+        key={item.value}
+        value={item.value}
+        disabled={f.disabled}
+        showRibbon={args.showRibbon}
+        ribbon={f.ribbonColor}
       >
-        {item.title}
-      </AccordionTrigger>
-      <AccordionContent>{item.content}</AccordionContent>
-    </AccordionItem>
-  ))}
+        <AccordionTrigger
+          contentCustom={
+            args.contentCustom ? <ContentCustomSlot /> : undefined
+          }
+          description={
+            parts && args.showDescription ? f.description : undefined
+          }
+          details={parts && args.showDetails ? f.details : undefined}
+          detailsTrend={trendOf(f.detailsTrend)}
+          tag={parts && args.showTag ? f.tagLabel : undefined}
+          tagColor={f.tagColor}
+          dragHandle={parts && args.showDragHandle}
+          checkbox={
+            parts &&
+            args.showCheckbox && (
+              <Checkbox
+                aria-label={f.label}
+                onClick={(event) => event.stopPropagation()}
+              />
+            )
+          }
+          icon={
+            parts && args.showIcon
+              ? (findHugeicon(f.icon) ?? CommandIcon)
+              : undefined
+          }
+          iconColor={f.iconColor}
+        >
+          {f.label}
+        </AccordionTrigger>
+        <AccordionContent>{item.content}</AccordionContent>
+      </AccordionItem>
+    )
+  })}
 </Accordion>
 ```
 
 ## Figma notes
 
-Mirrors the Figma Accordion component. Style (Divider / Container) is set once on the root and read by the items through group-data-[variant].
+Mirrors the Figma Accordion component. Style (Divider / Container) is set once on the root and read by the items through group-data-[variant]. `allowMultiple` lets several items be open at once (the default); off, opening an item closes the others. Base UI's `multiple` still works and wins if set.
 
 ## Variants
 
@@ -67,6 +87,12 @@ Mirrors the Figma Accordion component. Style (Divider / Container) is set once o
 ## Props
 
 Documented props only; every component also accepts the props of the element or Base UI part it renders (`className`, events, ARIA…).
+
+`Accordion`:
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `allowMultiple?` | `boolean` | Several items can be open at once. Off: only one at a time. |
 
 `AccordionItem`:
 

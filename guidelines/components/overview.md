@@ -6,7 +6,7 @@ Every component is a named export of `@lucasdost/design-system`. Read the file o
 
 | Component | What it is | File | Exports |
 | --- | --- | --- | --- |
-| Accordion | Stacked headings that reveal a section of content. | [accordion.md](./accordion.md) | `Accordion`, `AccordionItem`, `AccordionTrigger`, `AccordionContent` |
+| Accordion | Serve para organizar conteúdos em seções expansíveis, exibindo ou ocultando informações sob demanda para reduzir a complexidade visual. | [accordion.md](./accordion.md) | `Accordion`, `AccordionItem`, `AccordionTrigger`, `AccordionContent` |
 | Alert | Displays a callout for user attention. | [alert.md](./alert.md) | `Alert`, `AlertAction` |
 | Avatar | An image element with a fallback for representing the user. | [avatar.md](./avatar.md) | `Avatar`, `AvatarImage`, `AvatarFallback` |
 | Backdrop | Dims the screen behind an overlay. | [backdrop.md](./backdrop.md) | `Backdrop` |
