@@ -18,7 +18,7 @@ import {
   type IconSvgElement,
 } from "@/components/ui/icon"
 import { IconColors, iconColorsVariants } from "@/components/ui/icon-colors"
-import { Tag } from "@/components/ui/tag"
+import { Tag, type TagProps } from "@/components/ui/tag"
 
 // Mirrors the Figma List Item: Type (Discreet / Divider / Container) × State
 // (Default / Pressed / Disabled) + Focus, with the .List Item Content Left and
@@ -123,6 +123,8 @@ type ListItemContentLeftProps = {
   detailsTrend?: ListItemTrend
   /** Figma Show Tag: a Small Accent Strong Tag under the text. */
   tag?: React.ReactNode
+  /** Color of the Tag (Strong emphasis). */
+  tagColor?: TagProps["color"]
   /** Figma Show Drag Handle. */
   dragHandle?: boolean
   /** Figma Show Checkbox: pass a `<Checkbox />`. */
@@ -131,7 +133,9 @@ type ListItemContentLeftProps = {
   icon?: IconSvgElement
   /** Color of the Icon Colors container (Figma Icon Colors Color). */
   iconColor?: VariantProps<typeof iconColorsVariants>["color"]
-  /** Figma Content Left Custom=True: replaces the whole left content. */
+  /** Figma Content Custom=True: replaces the whole left content. */
+  contentCustom?: React.ReactNode
+  /** @deprecated Use `contentCustom`. */
   contentLeft?: React.ReactNode
 }
 
@@ -143,19 +147,23 @@ function ListItemContentLeft({
   details,
   detailsTrend,
   tag,
+  tagColor = "accent",
   dragHandle = false,
   checkbox,
   icon,
   iconColor = "accent",
+  contentCustom,
   contentLeft,
 }: ListItemContentLeftProps) {
+  // `contentLeft` is the old name of `contentCustom`, still accepted.
+  const custom = contentCustom ?? contentLeft
   return (
     <span
       data-slot="list-item-content-left"
       className="flex min-w-0 flex-1 items-start gap-3"
     >
-      {isShown(contentLeft) ? (
-        contentLeft
+      {isShown(custom) ? (
+        custom
       ) : (
         <>
           {dragHandle && (
@@ -208,7 +216,7 @@ function ListItemContentLeft({
               )}
             </span>
             {isShown(tag) && (
-              <Tag data-slot="list-item-tag" color="accent" emphasis="strong">
+              <Tag data-slot="list-item-tag" color={tagColor} emphasis="strong">
                 {tag}
               </Tag>
             )}
@@ -248,6 +256,8 @@ type ListItemProps = Omit<useRender.ComponentProps<"div">, "children"> &
     /** Figma Show Buttons: 1 to 3 icon-only Ghost Buttons, 12px apart. */
     actions?: React.ReactNode
     /** Figma Content Right Custom=True: replaces the whole right content. */
+    contentCustomRight?: React.ReactNode
+    /** @deprecated Use `contentCustomRight`. */
     contentRight?: React.ReactNode
   }
 
@@ -263,16 +273,19 @@ function ListItem({
   details,
   detailsTrend,
   tag,
+  tagColor,
   dragHandle,
   checkbox,
   icon,
   iconColor,
+  contentCustom,
   contentLeft,
   textRight,
   textRightTrend,
   tagRight,
   arrow = false,
   actions,
+  contentCustomRight,
   contentRight,
   render,
   onClick,
@@ -287,8 +300,11 @@ function ListItem({
     (render.type === "a" || render.type === "button")
   const needsButtonRole = isClickable && !isNativeControl
 
+  // `contentRight` is the old name of `contentCustomRight`, still accepted.
+  const customRight = contentCustomRight ?? contentRight
+
   const hasRight =
-    isShown(contentRight) ||
+    isShown(customRight) ||
     isShown(textRight) ||
     isShown(tagRight) ||
     arrow ||
@@ -299,9 +315,9 @@ function ListItem({
       data-slot="list-item-content-right"
       className="flex max-h-12 min-h-10 shrink-0 items-center gap-4 self-stretch"
     >
-      {isShown(contentRight) ? (
+      {isShown(customRight) ? (
         <div className="flex min-h-10 min-w-10 items-center justify-center">
-          {contentRight}
+          {customRight}
         </div>
       ) : (
         <>
@@ -370,11 +386,12 @@ function ListItem({
           details={details}
           detailsTrend={detailsTrend}
           tag={tag}
+          tagColor={tagColor}
           dragHandle={dragHandle}
           checkbox={checkbox}
           icon={icon}
           iconColor={iconColor}
-          contentLeft={contentLeft}
+          contentCustom={contentCustom ?? contentLeft}
         />
         {right}
       </div>
