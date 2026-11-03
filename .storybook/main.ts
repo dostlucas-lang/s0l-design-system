@@ -17,9 +17,14 @@ const config: StorybookConfig = {
   },
   staticDirs: ["../public"],
   // The `@/` imports (components.json aliases) point at the repo root, like in
-  // tsconfig.json and vite.lib.config.ts. Tailwind runs through
-  // postcss.config.mjs.
-  viteFinal(config) {
+  // tsconfig.json and vite.lib.config.ts.
+  // Tailwind runs through @tailwindcss/vite, like in the apps that use the
+  // package (examples/vite-app, Figma Make). With @tailwindcss/postcss the
+  // @fontsource imports were inlined without rebasing their url(./files/…), so
+  // the font files were never emitted and every story fell back to sans-serif.
+  async viteFinal(config) {
+    const { default: tailwindcss } = await import("@tailwindcss/vite")
+    config.plugins = [...(config.plugins ?? []), tailwindcss()]
     config.resolve ??= {}
     config.resolve.alias = [
       ...(Array.isArray(config.resolve.alias) ? config.resolve.alias : []),
