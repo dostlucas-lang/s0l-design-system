@@ -1,5 +1,5 @@
 import * as React from "react"
-import type { Meta, StoryObj } from "@storybook/nextjs-vite"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Settings01Icon } from "@hugeicons/core-free-icons"
 
 import { Button } from "@/components/ui/button"

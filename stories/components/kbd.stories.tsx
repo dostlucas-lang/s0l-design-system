@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/nextjs-vite"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { ArrowUp02Icon, CommandIcon } from "@hugeicons/core-free-icons"
 
 import { Button } from "@/components/ui/button"

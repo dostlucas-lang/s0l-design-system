@@ -1,4 +1,4 @@
-// Generates app/tokens.css from tokens/s0l.tokens.json (the Figma variables snapshot).
+// Generates styles/tokens.css from tokens/s0l.tokens.json (the Figma variables snapshot).
 // Run with `npm run tokens`.
 
 import { readFileSync, writeFileSync } from "node:fs"
@@ -20,7 +20,7 @@ import {
 
 const root = path.resolve(import.meta.dirname, "..")
 const source = path.join(root, "tokens/s0l.tokens.json")
-const output = path.join(root, "app/tokens.css")
+const output = path.join(root, "styles/tokens.css")
 
 const file: TokenFile = JSON.parse(readFileSync(source, "utf8"))
 

@@ -7,7 +7,7 @@ import {
   StarIcon,
   UserIcon,
 } from "@hugeicons/core-free-icons"
-import type { Meta, StoryContext, StoryObj } from "@storybook/nextjs-vite"
+import type { Meta, StoryContext, StoryObj } from "@storybook/react-vite"
 import { useArgs } from "storybook/preview-api"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -220,7 +220,6 @@ const cellProps = (
         description: cellDescription,
         children: cellLabel,
         media: (
-          // eslint-disable-next-line @next/next/no-img-element -- a Storybook sample.
           <img
             src="/storybook/table-image.jpg"
             alt=""

@@ -1,4 +1,4 @@
-import globalsCss from "@/app/globals.css?raw"
+import themeCss from "@/styles/theme.css?raw"
 import { cn } from "@/lib/utils"
 import { tokens } from "@/tokens/data"
 import {
@@ -125,7 +125,7 @@ function Note({ children }: { children: React.ReactNode }) {
 }
 
 // Renders a token live from CSS inside a forced light or dark scope, so it
-// follows the current accent and any change to app/tokens.css.
+// follows the current accent and any change to styles/tokens.css.
 function ThemedSwatch({
   theme,
   variable,
@@ -570,10 +570,10 @@ function Shadows() {
   )
 }
 
-// The shadcn layer in globals.css aliases every shadcn variable to an S0L token.
+// The shadcn layer in theme.css aliases every shadcn variable to an S0L token.
 function readShadcnAliases() {
   const block =
-    globalsCss.match(
+    themeCss.match(
       /:root,\s*\.light,\s*\.dark,\s*\[data-accent\]\s*\{([^}]*)\}/
     )?.[1] ?? ""
 
@@ -622,10 +622,10 @@ export function DesignTokens() {
         Figma file (synced {tokens.$source.syncedAt}). The snapshot lives in{" "}
         <TokenName>tokens/s0l.tokens.json</TokenName>;{" "}
         <TokenName>npm run tokens</TokenName> generates{" "}
-        <TokenName>app/tokens.css</TokenName> with one CSS variable per Figma
+        <TokenName>styles/tokens.css</TokenName> with one CSS variable per Figma
         variable (<TokenName>--s0l-*</TokenName>), keeping aliases as{" "}
         <TokenName>var()</TokenName> references, plus the Tailwind utilities.
-        shadcn variables in <TokenName>app/globals.css</TokenName> are aliases
+        shadcn variables in <TokenName>styles/theme.css</TokenName> are aliases
         of these tokens.
       </Note>
 

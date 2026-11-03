@@ -1,5 +1,5 @@
 import * as React from "react"
-import type { Meta, StoryObj } from "@storybook/nextjs-vite"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 
 import { InputNumber } from "@/components/ui/input-number"
 import { inputLabelArgTypes, labelArgs } from "./label.args"

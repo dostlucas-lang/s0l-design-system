@@ -1,5 +1,5 @@
 import * as React from "react"
-import type { Meta, StoryObj } from "@storybook/nextjs-vite"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 
 import { cn } from "@/lib/utils"
 import { HugeiconsIcon } from "@/components/ui/icon"

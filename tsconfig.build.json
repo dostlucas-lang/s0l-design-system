@@ -1,0 +1,13 @@
+{
+  // Types for the published package (vite-plugin-dts reads this file).
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "allowImportingTsExtensions": false,
+    "incremental": false
+  },
+  "include": ["src", "components", "lib", "hooks", "tokens"],
+  "exclude": ["node_modules", "dist", "stories", ".storybook", "scripts"]
+}

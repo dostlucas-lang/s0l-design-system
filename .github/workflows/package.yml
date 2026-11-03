@@ -1,0 +1,34 @@
+name: 'Package'
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+jobs:
+  check:
+    name: 'Build and check the npm package'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run build
+      - run: npm run check:package
+      # The generated guidelines must be committed.
+      - run: git diff --exit-code -- guidelines
+      # Install the packed tarball in a Vite + Tailwind v4 app, like Figma Make.
+      - run: npm pack
+      - name: Build the example Vite app with the packed package
+        working-directory: examples/vite-app
+        run: |
+          npm install --no-package-lock ../../s0l-design-system-*.tgz
+          npm install --no-package-lock
+          npm run build

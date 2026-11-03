@@ -1,12 +1,20 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
-import storybook from "eslint-plugin-storybook";
+import js from "@eslint/js"
+import { defineConfig, globalIgnores } from "eslint/config"
+import reactHooks from "eslint-plugin-react-hooks"
+import storybook from "eslint-plugin-storybook"
+import globals from "globals"
+import tseslint from "typescript-eslint"
 
 const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  reactHooks.configs.flat.recommended,
   ...storybook.configs["flat/recommended"],
+  {
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node },
+    },
+  },
   // Icons go through components/ui/icon.tsx, which applies the Figma stroke.
   {
     ignores: ["components/ui/icon.tsx"],
@@ -25,15 +33,7 @@ const eslintConfig = defineConfig([
       ],
     },
   },
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-    "storybook-static/**",
-  ]),
-]);
+  globalIgnores(["dist/**", "storybook-static/**", "consumer-test/**", "examples/**"]),
+])
 
-export default eslintConfig;
+export default eslintConfig
