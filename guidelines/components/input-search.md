@@ -3,7 +3,7 @@
 # Input Search
 
 ```tsx
-import { InputSearch } from "@s0l/design-system"
+import { InputSearch } from "@lucasdost/design-system"
 ```
 
 A search field built on Input Text. Mirrors the Figma Input Search component: State (Default / Hover / Active / Disabled / Read Only) × Filled.
@@ -31,6 +31,6 @@ Mirrors the Figma Input Search component: Input Text with the Search icon, no la
 
 ## Rules
 
-- Import `InputSearch` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `InputSearch` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

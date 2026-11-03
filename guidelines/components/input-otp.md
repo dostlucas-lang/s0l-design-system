@@ -3,7 +3,7 @@
 # Input Otp
 
 ```tsx
-import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from "@s0l/design-system"
+import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from "@lucasdost/design-system"
 ```
 
 One-time password input split into items. Mirrors the Figma Input OTP component: Filled × Error, with the Active item following the caret.
@@ -51,6 +51,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `InputOTP` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `InputOTP` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

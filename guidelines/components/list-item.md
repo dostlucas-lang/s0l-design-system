@@ -3,7 +3,7 @@
 # List Item
 
 ```tsx
-import { ListItem, ListItemContentLeft, ListItemTrendIcon, listItemVariants } from "@s0l/design-system"
+import { ListItem, ListItemContentLeft, ListItemTrendIcon, listItemVariants } from "@lucasdost/design-system"
 ```
 
 A row of a list: label and description with optional drag handle, checkbox, icon, details and tag on the left, and text, tag, arrow or buttons on the right. Mirrors the Figma List Item: Type (Discreet / Divider / Container) × State (Default / Pressed / Disabled), with the .List Item Content Left and Content Right partials as props. With `clickable` (the default when `onClick` is set) the whole item is clickable and shows Pressed on hover and press; with `clickable={false}` it has no hover and only the nested Buttons and Checkboxes respond. Stop propagation in nested buttons and checkboxes so they don't also trigger a clickable item.
@@ -51,11 +51,12 @@ Documented props only; every component also accepts the props of the element or 
 | `details?` | `React.ReactNode` | Figma Show Details: Body/Small in Text/Secondary. |
 | `detailsTrend?` | `ListItemTrend` | Figma Show Icon Trend: the trend icon before the details. |
 | `tag?` | `React.ReactNode` | Figma Show Tag: a Small Accent Strong Tag under the text. |
+| `tagColor?` | `TagProps["color"]` | Color of the Tag (Strong emphasis). |
 | `dragHandle?` | `boolean` | Figma Show Drag Handle. |
 | `checkbox?` | `React.ReactNode` | Figma Show Checkbox: pass a `<Checkbox />`. |
 | `icon?` | `IconSvgElement` | Figma Show Icon: a Hugeicons icon in the Icon Colors container. |
 | `iconColor?` | `VariantProps<typeof iconColorsVariants>["color"]` | Color of the Icon Colors container (Figma Icon Colors Color). |
-| `contentLeft?` | `React.ReactNode` | Figma Content Left Custom=True: replaces the whole left content. |
+| `contentCustom?` | `React.ReactNode` | Figma Content Custom=True: replaces the whole left content. |
 
 `ListItemProps`:
 
@@ -69,7 +70,7 @@ Documented props only; every component also accepts the props of the element or 
 | `tagRight?` | `React.ReactNode` | Figma Show Tag (right): a Small Accent Strong Tag. |
 | `arrow?` | `boolean` | Figma Show Icon Arrow: the trailing Arrow Right. |
 | `actions?` | `React.ReactNode` | Figma Show Buttons: 1 to 3 icon-only Ghost Buttons, 12px apart. |
-| `contentRight?` | `React.ReactNode` | Figma Content Right Custom=True: replaces the whole right content. |
+| `contentCustomRight?` | `React.ReactNode` | Figma Content Right Custom=True: replaces the whole right content. |
 
 ## Types
 
@@ -77,6 +78,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `ListItem` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `ListItem` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

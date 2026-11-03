@@ -3,7 +3,7 @@
 # Tooltip
 
 ```tsx
-import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@s0l/design-system"
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@lucasdost/design-system"
 ```
 
 Shows a hint when hovering or focusing an element. Mirrors the Figma Tooltip component: Pointer Position is the opposite of `side` (a tooltip on top points down) and Pointer Align follows `align` (Left = start, Right = end).
@@ -25,6 +25,6 @@ From the Storybook story; names like `args` or `label` are the story controls.
 
 ## Rules
 
-- Import `Tooltip` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Tooltip` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

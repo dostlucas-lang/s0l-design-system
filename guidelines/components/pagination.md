@@ -3,7 +3,7 @@
 # Pagination
 
 ```tsx
-import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious, PaginationRoot, PaginationSummary, getPaginationRange } from "@s0l/design-system"
+import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious, PaginationRoot, PaginationSummary, getPaginationRange } from "@lucasdost/design-system"
 ```
 
 Navigation between pages of content. Mirrors the Figma Pagination component: Type (Buttons / Simple) × Size (Small / Medium) × Page Count (≤ 7 / > 7) × Current Page (First / Mid / Last). Page Count and Current Page follow `pageCount` and `page`.
@@ -55,6 +55,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `Pagination` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Pagination` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

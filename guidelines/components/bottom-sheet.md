@@ -3,7 +3,7 @@
 # Bottom Sheet
 
 ```tsx
-import { BottomSheet, BottomSheetTrigger, BottomSheetClose, BottomSheetOverlay, BottomSheetContent, BottomSheetHandler, BottomSheetHeader, BottomSheetTitle, BottomSheetSearch, BottomSheetBody, BottomSheetFooter, bottomSheetBodyClassName, bottomSheetFooterClassName, bottomSheetPopupClassName, bottomSheetPositionerClassName } from "@s0l/design-system"
+import { BottomSheet, BottomSheetTrigger, BottomSheetClose, BottomSheetOverlay, BottomSheetContent, BottomSheetHandler, BottomSheetHeader, BottomSheetTitle, BottomSheetSearch, BottomSheetBody, BottomSheetFooter, bottomSheetBodyClassName, bottomSheetFooterClassName, bottomSheetPopupClassName, bottomSheetPositionerClassName } from "@lucasdost/design-system"
 ```
 
 A panel that slides up from the bottom of the screen. Mirrors the Figma Bottom Sheet: Content=Custom with optional Handler, Header (Title + close), Search, Scroll Bar and Footer. The other Content values are the Mobile=True Dropdown (Actions / Selection Single / Selection Multiple) and Date Picker (Day / Month / Year / Range), built on the same surface.
@@ -25,6 +25,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `BottomSheet` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `BottomSheet` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

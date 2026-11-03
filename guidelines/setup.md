@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-npm install @s0l/design-system
+npm install @lucasdost/design-system
 ```
 
 It needs React 19 (`react` and `react-dom` ^19). Its other dependencies
@@ -17,7 +17,7 @@ In the main CSS file, after Tailwind:
 
 ```css
 @import "tailwindcss";
-@import "@s0l/design-system/theme.css";
+@import "@lucasdost/design-system/theme.css";
 ```
 
 `theme.css` adds the S0L tokens as Tailwind utilities (`bg-background-primary`,
@@ -27,7 +27,7 @@ classes the components use.
 ### App without Tailwind
 
 ```ts
-import "@s0l/design-system/styles.css"
+import "@lucasdost/design-system/styles.css"
 ```
 
 `styles.css` is precompiled: Tailwind's base reset, the S0L theme and every
@@ -39,7 +39,7 @@ write yourself are not generated (that needs `theme.css`).
 In the app entry (for example `src/main.tsx`), for both setups:
 
 ```ts
-import "@s0l/design-system/fonts.css"
+import "@lucasdost/design-system/fonts.css"
 ```
 
 It loads Barlow (primary), Inter (secondary) and Geist Mono, self-hosted.
@@ -49,7 +49,7 @@ It loads Barlow (primary), Inter (secondary) and Geist Mono, self-hosted.
 Wrap the app once:
 
 ```tsx
-import { ThemeProvider, Toaster, TooltipProvider } from "@s0l/design-system"
+import { ThemeProvider, Toaster, TooltipProvider } from "@lucasdost/design-system"
 
 export function App() {
   return (
@@ -72,8 +72,8 @@ export function App() {
 Everything is a named export of the package root:
 
 ```tsx
-import { Button, Card, InputText, cn } from "@s0l/design-system"
+import { Button, Card, InputText, cn } from "@lucasdost/design-system"
 ```
 
 - `cn(...)` merges class names and knows the S0L text styles.
-- Design tokens as data: `import { tokens } from "@s0l/design-system/tokens"`.
+- Design tokens as data: `import { tokens } from "@lucasdost/design-system/tokens"`.

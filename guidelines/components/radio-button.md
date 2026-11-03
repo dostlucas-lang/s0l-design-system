@@ -3,7 +3,7 @@
 # Radio Button
 
 ```tsx
-import { RadioButton, RadioGroup } from "@s0l/design-system"
+import { RadioButton, RadioGroup } from "@lucasdost/design-system"
 ```
 
 A set of options where only one can be selected. Mirrors the Figma Radio Button (State × Active × Show Label × Label Position) and Radio Group (Direction) components.
@@ -59,6 +59,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `RadioButton` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `RadioButton` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

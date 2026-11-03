@@ -13,7 +13,7 @@ import {
   TooltipProvider,
   toast,
   useTheme,
-} from "@s0l/design-system"
+} from "@lucasdost/design-system"
 
 function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme()
@@ -37,7 +37,7 @@ export function App() {
           <main className="mx-auto flex min-h-svh max-w-3xl flex-col gap-8 bg-background-primary p-8">
             <header className="flex items-center justify-between">
               <h1 className="text-heading-large text-text-primary">
-                @s0l/design-system
+                @lucasdost/design-system
               </h1>
               <ThemeToggle />
             </header>

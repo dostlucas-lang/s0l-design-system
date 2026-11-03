@@ -3,7 +3,7 @@
 # Stepper
 
 ```tsx
-import { Stepper } from "@s0l/design-system"
+import { Stepper } from "@lucasdost/design-system"
 ```
 
 Shows the steps of a flow and where the user is. One component for the three Figma ones: Stepper Horizontal (Count), Stepper Vertical (Steps, Accordion) and Stepper Simple (Steps, Current Step). Each step is Success before the current one, Active on it and Default after it.
@@ -45,6 +45,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `Stepper` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Stepper` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

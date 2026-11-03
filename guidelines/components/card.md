@@ -3,7 +3,7 @@
 # Card
 
 ```tsx
-import { Card, CardMoreActions, cardVariants, cardFooterVariants } from "@s0l/design-system"
+import { Card, CardMoreActions, cardVariants, cardFooterVariants } from "@lucasdost/design-system"
 ```
 
 A surface that groups a title, description and actions about one subject. Mirrors the Figma Card: State (Default / Pressed / Disabled) + Focus, with the .Card Body and .Card Footer partials as props. With `clickable` (the default when `onClick` is set) the whole surface is clickable and shows Pressed on hover and press; with `clickable={false}` it has no hover and only the nested Buttons respond. Stop propagation in nested buttons so they don't also trigger a clickable card (`CardMoreActions` already does).
@@ -62,6 +62,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `Card` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Card` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

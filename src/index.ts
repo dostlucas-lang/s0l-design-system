@@ -1,4 +1,4 @@
-// Public entry of @s0l/design-system. One line per file in components/ui, so a
+// Public entry of @lucasdost/design-system. One line per file in components/ui, so a
 // new component is exported by adding it here (scripts/check-exports.ts fails
 // the build when one is missing).
 

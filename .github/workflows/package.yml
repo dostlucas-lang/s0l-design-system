@@ -29,6 +29,6 @@ jobs:
       - name: Build the example Vite app with the packed package
         working-directory: examples/vite-app
         run: |
-          npm install --no-package-lock ../../s0l-design-system-*.tgz
+          npm install --no-package-lock ../../lucasdost-design-system-*.tgz
           npm install --no-package-lock
           npm run build

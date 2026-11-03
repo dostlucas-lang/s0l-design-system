@@ -3,7 +3,7 @@
 # Carousel
 
 ```tsx
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, CarouselIndicators, CarouselControls, useCarousel } from "@s0l/design-system"
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, CarouselIndicators, CarouselControls, useCarousel } from "@lucasdost/design-system"
 ```
 
 Shows one slide at a time with arrows and indicators. Mirrors the Figma Carousel: Items (2 / 3 / 4 / 5 / > 5) × Current Item (First / Mid / Last). Above 5 slides only 5 indicators show, and an end one shrinks while more slides sit past it. Arrow keys, the arrows, the indicators and swiping all change the slide.
@@ -40,6 +40,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `Carousel` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Carousel` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

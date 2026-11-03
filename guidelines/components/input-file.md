@@ -3,7 +3,7 @@
 # Input File
 
 ```tsx
-import { DownloadIcon, FileItem, IconFileFormat, InputFile, TrashIcon } from "@s0l/design-system"
+import { DownloadIcon, FileItem, IconFileFormat, InputFile, TrashIcon } from "@lucasdost/design-system"
 ```
 
 An Upload Area to pick or drop files, above the File Item List. Without `multiple` it takes a single file: the Upload Area hides while there's a File Item, and comes back when it's removed. Mirrors the Figma Input File component, State (Default / Hover / Error / Disabled), and File Item, State (Loading / Uploaded / Error / Disabled).
@@ -66,6 +66,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `DownloadIcon` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `DownloadIcon` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

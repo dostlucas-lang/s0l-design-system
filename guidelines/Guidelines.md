@@ -1,6 +1,6 @@
 # S0L Design System
 
-`@s0l/design-system` is the S0L design system in code: 59 React components, the
+`@lucasdost/design-system` is the S0L design system in code: 59 React components, the
 S0L design tokens (the variables of the [S0L] DESIGN SYSTEM Figma file) and a
 Tailwind CSS v4 theme built from them. Build every screen with these
 components and tokens.
@@ -25,7 +25,7 @@ Read the one you need before styling anything outside a component:
 
 ## Rules
 
-- Use a component from `@s0l/design-system` whenever one exists. Do not
+- Use a component from `@lucasdost/design-system` whenever one exists. Do not
   rebuild buttons, inputs, cards, modals, tables or menus with plain HTML.
 - Use only the S0L token utilities for color, typography, radius and shadow
   (`bg-background-primary`, `text-text-secondary`, `text-heading-large`,
@@ -37,4 +37,4 @@ Read the one you need before styling anything outside a component:
 - Every screen must work in light and dark mode: use semantic tokens, never
   `bg-white`, `text-black` or fixed hex colors.
 - Import icons from `@hugeicons/core-free-icons` and render them with
-  `HugeiconsIcon` from `@s0l/design-system`.
+  `HugeiconsIcon` from `@lucasdost/design-system`.

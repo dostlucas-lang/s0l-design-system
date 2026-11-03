@@ -3,7 +3,7 @@
 # Chart Legend
 
 ```tsx
-import { ChartLegend, ChartLegendSwatch, chartColor, chartTypeOptions, formatChartTypedValue, formatChartValue, typedChartNumber } from "@s0l/design-system"
+import { ChartLegend, ChartLegendSwatch, chartColor, chartTypeOptions, formatChartTypedValue, formatChartValue, typedChartNumber } from "@lucasdost/design-system"
 ```
 
 ## Figma notes
@@ -26,6 +26,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `ChartLegend` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `ChartLegend` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

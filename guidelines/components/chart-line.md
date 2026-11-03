@@ -3,7 +3,7 @@
 # Chart Line
 
 ```tsx
-import { ChartLine } from "@s0l/design-system"
+import { ChartLine } from "@lucasdost/design-system"
 ```
 
 A line chart with its axes and Legend. Mirrors the Figma Chart Line: give it `lines`, and optionally `xLabels`, and hovering a node shows its values. Without `xLabels`, the longest line sets the nodes. The width follows the container.
@@ -42,6 +42,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `ChartLine` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `ChartLine` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

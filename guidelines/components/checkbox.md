@@ -3,7 +3,7 @@
 # Checkbox
 
 ```tsx
-import { Checkbox, CheckboxGroup } from "@s0l/design-system"
+import { Checkbox, CheckboxGroup } from "@lucasdost/design-system"
 ```
 
 Toggles a single option on or off. Mirrors the Figma Checkbox: State (Default / Read Only / Disabled), Active, Indeterminate, Label, Label Position, Description and Nested.
@@ -54,6 +54,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `Checkbox` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Checkbox` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

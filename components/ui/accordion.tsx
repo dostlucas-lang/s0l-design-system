@@ -11,17 +11,24 @@ import {
 
 // Mirrors the Figma Accordion component. Style (Divider / Container) is set
 // once on the root and read by the items through group-data-[variant].
+// `allowMultiple` lets several items be open at once (the default); off, opening
+// an item closes the others. Base UI's `multiple` still works and wins if set.
 function Accordion({
   className,
   variant = "divider",
+  allowMultiple = true,
+  multiple,
   ...props
 }: AccordionPrimitive.Root.Props & {
   variant?: "divider" | "container"
+  /** Several items can be open at once. Off: only one at a time. */
+  allowMultiple?: boolean
 }) {
   return (
     <AccordionPrimitive.Root
       data-slot="accordion"
       data-variant={variant}
+      multiple={multiple ?? allowMultiple}
       className={cn(
         "group/accordion flex w-full flex-col data-[variant=container]:gap-2",
         className
@@ -121,10 +128,12 @@ function AccordionTrigger({
   details,
   detailsTrend,
   tag,
+  tagColor,
   dragHandle,
   checkbox,
   icon,
   iconColor,
+  contentCustom,
   contentLeft,
   ...props
 }: AccordionPrimitive.Trigger.Props & Omit<ListItemContentLeftProps, "label">) {
@@ -146,11 +155,12 @@ function AccordionTrigger({
           details={details}
           detailsTrend={detailsTrend}
           tag={tag}
+          tagColor={tagColor}
           dragHandle={dragHandle}
           checkbox={checkbox}
           icon={icon}
           iconColor={iconColor}
-          contentLeft={contentLeft}
+          contentCustom={contentCustom ?? contentLeft}
         />
         <span className="flex max-h-12 min-h-10 shrink-0 items-center self-stretch">
           <HugeiconsIcon

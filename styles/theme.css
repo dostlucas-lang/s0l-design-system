@@ -4,7 +4,7 @@
  * so an app that already uses Tailwind v4 adds it after its own import:
  *
  *   @import "tailwindcss";
- *   @import "@s0l/design-system/theme.css";
+ *   @import "@lucasdost/design-system/theme.css";
  *
  * Storybook loads it through styles/globals.css. The published copy in dist/
  * also adds the @source for the compiled components (see scripts/build-css.ts).

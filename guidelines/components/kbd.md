@@ -3,7 +3,7 @@
 # Kbd
 
 ```tsx
-import { Kbd, KbdGroup } from "@s0l/design-system"
+import { Kbd, KbdGroup } from "@lucasdost/design-system"
 ```
 
 Displays a keyboard key or shortcut.
@@ -25,6 +25,6 @@ From the Storybook story; names like `args` or `label` are the story controls.
 
 ## Rules
 
-- Import `Kbd` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Kbd` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

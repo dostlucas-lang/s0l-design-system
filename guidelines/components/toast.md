@@ -3,7 +3,7 @@
 # Toast
 
 ```tsx
-import { Toaster, Toast, ToastAction, ToastClose, ToastContent, ToastDescription, ToastPortal, ToastProvider, ToastTitle, ToastViewport, createToastManager, toast, useToastManager } from "@s0l/design-system"
+import { Toaster, Toast, ToastAction, ToastClose, ToastContent, ToastDescription, ToastPortal, ToastProvider, ToastTitle, ToastViewport, createToastManager, toast, useToastManager } from "@lucasdost/design-system"
 ```
 
 A short, temporary notification. Mirrors the Figma Toast component: Color × Decoration (Icon / Avatar / Image), with title, description, up to two actions and Button Close. Use `toast.add()` from `@/components/ui/toast` with a `<Toaster />` mounted once in the app: `type` sets the Color, `actionProps` is Action 1, and `data` takes `avatar`, `image`, `secondaryAction` (Action 2) and `dismissable`.
@@ -48,6 +48,6 @@ Mirrors the Figma Toast component: Color (Neutral / Accent / Info / Success / Wa
 
 ## Rules
 
-- Import `Toaster` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `Toaster` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).

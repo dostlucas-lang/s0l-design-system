@@ -2,7 +2,7 @@
   "name": "s0l-vite-app-example",
   "private": true,
   "type": "module",
-  "description": "A Vite + React + Tailwind v4 app that consumes @s0l/design-system like Figma Make does. Used as a smoke test of the package.",
+  "description": "A Vite + React + Tailwind v4 app that consumes @lucasdost/design-system like Figma Make does. Used as a smoke test of the package.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@hugeicons/core-free-icons": "^4.3.5",
-    "@s0l/design-system": "file:../..",
+    "@lucasdost/design-system": "file:../..",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
   },

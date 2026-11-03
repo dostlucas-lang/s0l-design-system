@@ -3,7 +3,7 @@
 # Progress Bar
 
 ```tsx
-import { ProgressBar } from "@s0l/design-system"
+import { ProgressBar } from "@lucasdost/design-system"
 ```
 
 Shows how far a task has gone. Mirrors the Figma Progress Bar (Value 0–100, Color: Brand Gradient or Chart 1–9) and Progress Bar Label (Label Position: Top, Bottom or Side, with Show Label Left and Show Label Right).
@@ -46,6 +46,6 @@ Documented props only; every component also accepts the props of the element or 
 
 ## Rules
 
-- Import `ProgressBar` from `@s0l/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
+- Import `ProgressBar` from `@lucasdost/design-system`. Do not rebuild it with plain HTML and Tailwind classes.
 - Style it through its props and variants first. Use `className` only for layout (margin, width, grid placement), never to change its colors, typography or radius.
 - Colors come from the S0L tokens; see [color](../foundations/color.md).
