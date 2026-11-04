@@ -31,7 +31,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Switches between related panels of content. Mirrors the Figma Tabs component: Level (Primary / Secondary) × Count, with the .Tab Primary / .Tab Secondary states (Default, Hover, Disabled, Active), Show Icon and Show Badge.",
+          "Serve para organizar o conteúdo em seções e permitir a navegação entre elas.",
       },
     },
   },

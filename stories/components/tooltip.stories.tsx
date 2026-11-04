@@ -26,7 +26,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Shows a hint when hovering or focusing an element. Mirrors the Figma Tooltip component: Pointer Position is the opposite of `side` (a tooltip on top points down) and Pointer Align follows `align` (Left = start, Right = end).",
+          "Serve para fornecer informações complementares de forma contextual e temporária, acionado por hover ou foco.",
       },
     },
   },

@@ -11,7 +11,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "A search field built on Input Text. Mirrors the Figma Input Search component: State (Default / Hover / Active / Disabled / Read Only) × Filled.",
+          "Serve para encontrar conteúdo relevante ao inserir palavras-chave.",
       },
     },
   },

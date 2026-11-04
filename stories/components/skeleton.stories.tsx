@@ -8,7 +8,7 @@ const meta = {
   tags: ["autodocs"],
   parameters: {
     docs: {
-      description: { component: "Placeholder shown while content is loading." },
+      description: { component: "Serve para representar visualmente o carregamento de conteúdo, simulando a estrutura da interface antes que os dados reais sejam exibidos." },
     },
   },
   args: {

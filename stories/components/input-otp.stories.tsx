@@ -34,7 +34,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "One-time password input split into items. Mirrors the Figma Input OTP component: Filled × Error, with the Active item following the caret.",
+          "Serve para inserir códigos de verificação segmentados, distribuindo cada caractere em campos individuais.",
       },
     },
   },

@@ -12,7 +12,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Selects a value or range within bounds. Mirrors the Figma Slider component: one value or a range (Property 1), with the optional Scale.",
+          "Serve para selecionar valores dentro de um intervalo, por meio de interação direta com um controle deslizante.",
       },
     },
   },

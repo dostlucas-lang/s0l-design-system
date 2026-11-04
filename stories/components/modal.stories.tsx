@@ -37,7 +37,7 @@ const meta = {
   tags: ["autodocs"],
   parameters: {
     docs: {
-      description: { component: "A window overlaid on the page." },
+      description: { component: "Serve para interromper momentaneamente a interação com o restante da tela, voltando a atenção da pessoa usuária para uma informação importante." },
     },
   },
   args: {

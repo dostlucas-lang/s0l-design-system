@@ -29,7 +29,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "A key number with its label, change and context. Mirrors the Figma Stats: Size (Small / Medium / Large) sets the value's Heading style (Medium / Large / X-Large); Show Label, Show Info Icon, Show Trend (with Negative) and Show Description are props. The Info icon opens `info` in a Tooltip.",
+          "Serve para apresentar indicadores numéricos de alta relevância, permitindo a compreensão rápida de métricas importantes da aplicação.",
       },
     },
   },

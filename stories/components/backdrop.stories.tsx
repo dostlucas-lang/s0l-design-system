@@ -25,7 +25,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Dims the screen behind an overlay. Mirrors the Figma Backdrop: Background/Overlay, no blur. Modal, Drawer and Bottom Sheet already render it, and the Dropdown and Date Picker get it from the Bottom Sheet on mobile.",
+          "Serve para atenuar visualmente o conteúdo ao fundo, direcionando o foco para um elemento sobreposto.",
       },
       // It's fixed to the screen: inline, it would cover this page.
       story: { inline: false, iframeHeight: 360 },

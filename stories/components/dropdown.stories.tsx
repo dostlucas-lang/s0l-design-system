@@ -85,7 +85,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "A menu of actions or options triggered by a button. Mirrors the Figma Dropdown: Type (Actions / Selection Single / Selection Multiple) × Sections (1–4). Mobile=True shows the same menu as the Figma Bottom Sheet.",
+          "Serve para exibir uma lista de opções ou ações de forma contextual, permitindo seleção única, múltipla ou execução de ações.",
       },
     },
   },

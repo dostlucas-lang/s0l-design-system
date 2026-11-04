@@ -10,7 +10,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Visually divides content. Mirrors the Figma Divider: a 1px line in Border/Secondary that fills the width of its container.",
+          "Serve para separar visualmente conteúdos ou seções, facilitando a organização e a leitura das informações.",
       },
     },
   },

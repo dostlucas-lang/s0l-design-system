@@ -11,7 +11,7 @@ const meta = {
   tags: ["autodocs"],
   parameters: {
     docs: {
-      description: { component: "Displays a keyboard key or shortcut." },
+      description: { component: "Serve para representar teclas ou atalhos de teclado, facilitando a identificação dos comandos disponíveis na interface." },
     },
   },
   args: {

@@ -11,7 +11,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "A date field with a calendar. Mirrors the Figma Input Date and Input Date Range components: State (Default / Hover / Active / Disabled / Read Only) × Filled × Error. Type picks a Day (DD/MM/AAAA), Month (MM/AAAA) or Year (AAAA), typed or picked in the Date Picker panel (Calendar in a Popover). Range=True shows Data inicial and Data final with a two-month panel. Show Footer adds Cancelar / Aplicar; without it, picking applies right away.",
+          "Serve para selecionar uma data ou intervalo de datas.",
       },
     },
   },

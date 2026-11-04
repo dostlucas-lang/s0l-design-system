@@ -13,7 +13,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "The label of a control, with the optional requirement text and Info icon, which shows the `info` text in a tooltip. Mirrors the Figma .Label, .Label Read Only and .Label Disabled components as one component: `state` picks the colors. The Input components already render it from their `label` prop.",
+          "Serve para identificar um campo de formulário, indicando sua obrigatoriedade e oferecendo informações complementares quando necessário.",
       },
     },
   },

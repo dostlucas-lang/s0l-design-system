@@ -59,7 +59,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Shows the steps of a flow and where the user is. One component for the three Figma ones: Stepper Horizontal (Count), Stepper Vertical (Steps, Accordion) and Stepper Simple (Steps, Current Step). Each step is Success before the current one, Active on it and Default after it.",
+          "Serve para indicar o progresso de um fluxo dividido em etapas sequenciais, ajudando a entender a posição atual e o que falta concluir.",
       },
     },
   },

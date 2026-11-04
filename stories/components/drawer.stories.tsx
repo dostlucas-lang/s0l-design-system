@@ -32,7 +32,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "A panel that slides in from an edge of the screen over the page.",
+          "Serve para exibir conteúdos complementares ou permitir a execução de tarefas sem abandonar o contexto da página.",
       },
     },
   },

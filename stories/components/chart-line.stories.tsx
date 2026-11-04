@@ -203,7 +203,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "A line chart with its axes and Legend. Mirrors the Figma Chart Line: give it `lines`, and optionally `xLabels`, and hovering a node shows its values. Without `xLabels`, the longest line sets the nodes. The width follows the container.",
+          "Serve para representar a variação de um ou mais conjuntos de dados ao longo do tempo.",
       },
     },
   },

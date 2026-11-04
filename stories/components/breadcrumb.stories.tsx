@@ -26,7 +26,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Shows the path to the current resource in a hierarchy. Mirrors the Figma Breadcrumbs: 2 to 6 items, with Default / Hover / Disabled links and the Active page.",
+          "Serve para exibir a hierarquia de navegação, indicando a localização atual do usuário dentro da estrutura do sistema e facilitando o retorno a níveis anteriores.",
       },
     },
   },

@@ -21,7 +21,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "A number field with Minus and Plus buttons. Mirrors the Figma Input Number component: State (Default / Hover / Active / Disabled / Read Only) × Filled × Error. Hover, Active and Filled follow the browser; Disabled, Read Only and Error come from props. Arrow Up / Down also step the value, within `min` and `max`.",
+          "Serve para inserir ou ajustar valores numéricos de forma controlada.",
       },
     },
   },

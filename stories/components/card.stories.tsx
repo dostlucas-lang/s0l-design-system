@@ -122,7 +122,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "A surface that groups a title, description and actions about one subject. Mirrors the Figma Card: State (Default / Pressed / Disabled) + Focus, with the .Card Body and .Card Footer partials as props. With `clickable` (the default when `onClick` is set) the whole surface is clickable and shows Pressed on hover and press; with `clickable={false}` it has no hover and only the nested Buttons respond. Stop propagation in nested buttons so they don't also trigger a clickable card (`CardMoreActions` already does).",
+          "Serve para agrupar informações relacionadas e ações associadas em uma única unidade visual. Ele facilita a leitura, a organização do conteúdo e a execução de ações contextuais.",
       },
     },
   },
