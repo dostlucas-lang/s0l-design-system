@@ -1,0 +1,9 @@
+/*
+ * Story backgrounds follow color.background.primary, so they switch with the
+ * .dark class that the theme toolbar puts on <html>. `body` is the canvas of a
+ * single story; `.docs-story` is each story block on a Docs page.
+ */
+body,
+.docs-story {
+  background-color: var(--s0l-background-primary);
+}

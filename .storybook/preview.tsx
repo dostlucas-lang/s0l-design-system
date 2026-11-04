@@ -2,6 +2,7 @@ import type { Preview } from "@storybook/react-vite"
 import { withThemeByClassName } from "@storybook/addon-themes"
 
 import "../styles/globals.css"
+import "./preview.css"
 import { tokens } from "@/tokens/data"
 import { getCollection, slug } from "@/tokens/lib"
 
