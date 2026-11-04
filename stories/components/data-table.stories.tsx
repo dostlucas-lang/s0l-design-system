@@ -115,7 +115,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "A Table with its header, search, bulk actions and pagination. Mirrors the Figma Data Table: give it `rows` and `columns`, and the search, the sorting, the selection across pages and the pagination work by themselves.",
+          "Serve para exibir dados estruturados em formato tabular, permitindo análise e interação por meio de recursos como ordenação, filtros e seleção.",
       },
     },
   },

@@ -114,7 +114,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Triggers an action or event. Mirrors the Figma Button Primary / Secondary / Ghost components. In code, Level is the `variant` prop, Inverse is `secondary-inverse` for Secondary and `inverse` for Ghost, the label is the children and the icons are Hugeicons icons with `data-icon="inline-start"` or `"inline-end"`.',
+          "Serve para executar uma ação com um clique e comunicar o que acontecerá em seguida.",
       },
     },
   },

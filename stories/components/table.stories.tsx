@@ -510,7 +510,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Displays tabular data. Mirrors the Figma Table: Table sets the variants, Loading included, and each row, column and cell has its own props. Selection, Accordion, Actions and Skeleton cells are their own components.",
+          "Serve para exibir dados estruturados em formato tabular, facilitando a leitura e a comparação de informações.",
       },
     },
   },

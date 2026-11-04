@@ -75,7 +75,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "The main navigation of a mobile screen: 2 to 4 destinations in a floating pill. Mirrors the Figma Bottom Bar (Items=2 / 3 / 4) and its .Bottom Bar Button (State: Default / Pressed / Active / Disabled + Focus, Show Badge). `BottomBar` only draws the bar; pin it to the bottom of the screen where it's used. Each `BottomBarItem` is a `<button>`, or a link through `render`.",
+          "Serve para navegar entre as principais seções da aplicação por meio de uma barra na parte inferior da tela.",
       },
     },
   },

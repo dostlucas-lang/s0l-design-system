@@ -35,7 +35,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "A read-only value with its label, like a field that can't be edited: the input .Label, the value in Body/Medium, up to three Button Ghost actions (copy, share…) and the .Text Help. Mirrors the Figma Data Item: Value, Show Buttons and Show Button 2 / 3.",
+          "Serve para exibir informações importantes de forma estruturada, legível e não editável.",
       },
     },
   },

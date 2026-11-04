@@ -50,7 +50,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Picks a value from a list of options. Mirrors the Figma Input Select component: State (Default / Hover / Active / Disabled / Read Only) × Filled × Error. Active is the open list, which is the Figma Dropdown. Pass `items` so the field can show the label of the selected value.",
+          "Serve para selecionar uma ou múltiplas opções a partir de uma lista flutuante.",
       },
     },
   },

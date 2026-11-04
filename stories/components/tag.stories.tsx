@@ -54,7 +54,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "A short label for status, categories or filters. Mirrors the Figma Tag: Size (Small / Medium) × Color (Neutral / Accent / Info / Success / Warning / Danger) × Emphasis (Soft / Strong) × State (Default / Disabled) × Icon Only, with Show Icon and Dismissible.",
+          "Serve para representar itens, categorias ou atributos de forma compacta, facilitando a identificação e organização de informações na interface.",
       },
     },
   },

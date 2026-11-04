@@ -29,7 +29,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Placeholder shown when there is no content to display. The icon is an Icon Colors with container.",
+          "Serve para representar a ausência de conteúdo ou resultados em uma interface, orientando o usuário sobre o motivo e o próximo passo a ser tomado.",
       },
     },
   },

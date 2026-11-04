@@ -162,7 +162,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "A donut chart with its Legend. Mirrors the Figma Chart Donut: give it `items`, and the slices, the Legend and the center follow the values. The width follows the container.",
+          "Serve para destacar a participação relativa de cada categoria em um conjunto de dados, mantendo o valor consolidado em evidência no centro.",
       },
     },
   },

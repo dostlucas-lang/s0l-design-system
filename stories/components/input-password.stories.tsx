@@ -22,7 +22,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "A password field built on Input Text, with Button View to show or hide the characters. Mirrors the Figma Input Password component: State (Default / Hover / Active / Disabled / Read Only) × Filled × Error.",
+          "Serve para inserir senhas de forma segura, permitindo exibir ou ocultar os caracteres digitados.",
       },
     },
   },

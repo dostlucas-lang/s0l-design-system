@@ -22,7 +22,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "An image element with a fallback for representing the user. Mirrors the Figma Avatar: Size × Color, Type Photo or Initials.",
+          "Serve para representar usuários, contas ou entidades por meio de imagem ou iniciais, facilitando identificação visual rápida dos usuários.",
       },
     },
   },
