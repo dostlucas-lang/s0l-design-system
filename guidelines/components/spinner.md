@@ -6,7 +6,7 @@
 import { Spinner } from "@lucasdost/design-system"
 ```
 
-Indicates an ongoing loading state. Mirrors the Figma Spinner component: Size 16 / 20 / 24 / 32 / 40 / 56px, in Icon/Primary.
+Serve para representar visualmente o processamento de uma operação rápida do sistema, em que a duração não importa ou não pode ser prevista.
 
 ## Example
 

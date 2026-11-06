@@ -6,7 +6,7 @@
 import { Timeline, TimelineItem } from "@lucasdost/design-system"
 ```
 
-Lists events in order along a dotted line. Mirrors the Figma Timeline and Timeline Item: date, title, Show Tag, description, Show Actions and Show Action 2.
+Serve para organizar eventos em ordem cronológica, facilitando a leitura de histórico, progresso ou sequência de ações ao longo do tempo.
 
 ## Example
 

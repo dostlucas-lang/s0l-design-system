@@ -6,7 +6,7 @@
 import { Badge, BadgeObject, badgeVariants } from "@lucasdost/design-system"
 ```
 
-A small count or status dot, often on the corner of another element. Mirrors the Figma Badge component: Show Label × Color (Neutral / Accent, named Brand in Figma / Info / Success / Warning / Danger / Inverse / On Color), and Badge Object for the corner placement.
+Serve para destacar informações complementares, status, notificações ou quantidades de forma rápida e contextual.
 
 ## Example
 

@@ -6,7 +6,7 @@
 import { InputText } from "@lucasdost/design-system"
 ```
 
-A single-line text field. Mirrors the Figma Input Text component: State (Default / Hover / Active / Disabled / Read Only) × Filled × Error. Hover, Active and Filled follow the browser; Disabled, Read Only and Error come from props.
+Serve para inserir dados textuais. Pode ser adaptado para diferentes casos de uso, como texto comum, senhas, telefones, entre outros.
 
 ## Example
 

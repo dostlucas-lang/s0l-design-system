@@ -6,7 +6,7 @@
 import { ProgressBar } from "@lucasdost/design-system"
 ```
 
-Shows how far a task has gone. Mirrors the Figma Progress Bar (Value 0–100, Color: Brand Gradient or Chart 1–9) and Progress Bar Label (Label Position: Top, Bottom or Side, with Show Label Left and Show Label Right).
+Serve para representar visualmente o progresso de uma tarefa em relação a um total conhecido, permitindo entender quanto já foi concluído e quanto ainda falta.
 
 ## Example
 

@@ -6,7 +6,7 @@
 import { BottomSheet, BottomSheetTrigger, BottomSheetClose, BottomSheetOverlay, BottomSheetContent, BottomSheetHandler, BottomSheetHeader, BottomSheetTitle, BottomSheetSearch, BottomSheetBody, BottomSheetFooter, bottomSheetBodyClassName, bottomSheetFooterClassName, bottomSheetPopupClassName, bottomSheetPositionerClassName } from "@lucasdost/design-system"
 ```
 
-A panel that slides up from the bottom of the screen. Mirrors the Figma Bottom Sheet: Content=Custom with optional Handler, Header (Title + close), Search, Scroll Bar and Footer. The other Content values are the Mobile=True Dropdown (Actions / Selection Single / Selection Multiple) and Date Picker (Day / Month / Year / Range), built on the same surface.
+Serve para exibir conteúdos, ações ou seletores em dispositivos móveis, substituindo menus flutuantes em geral.
 
 ## Figma notes
 

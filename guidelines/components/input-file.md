@@ -6,7 +6,7 @@
 import { DownloadIcon, FileItem, IconFileFormat, InputFile, TrashIcon } from "@lucasdost/design-system"
 ```
 
-An Upload Area to pick or drop files, above the File Item List. Without `multiple` it takes a single file: the Upload Area hides while there's a File Item, and comes back when it's removed. Mirrors the Figma Input File component, State (Default / Hover / Error / Disabled), and File Item, State (Loading / Uploaded / Error / Disabled).
+Serve para importar um ou mais arquivos por seleção manual ou arrastar e soltar, exibindo o status ao longo do carregamento.
 
 ## Example
 

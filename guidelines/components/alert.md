@@ -6,7 +6,7 @@
 import { Alert, AlertAction, alertVariants } from "@lucasdost/design-system"
 ```
 
-Displays a callout for user attention. Mirrors the Figma Alert: Color × Direction, with Title, Description, Icon, Actions and Dismissable.
+Serve para exibir mensagens iniciadas pelo sistema, persistentes e contextuais dentro do fluxo da interface.
 
 ## Example
 

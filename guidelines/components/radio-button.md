@@ -6,7 +6,7 @@
 import { RadioButton, RadioGroup } from "@lucasdost/design-system"
 ```
 
-A set of options where only one can be selected. Mirrors the Figma Radio Button (State × Active × Show Label × Label Position) and Radio Group (Direction) components.
+Serve para selecionar uma única opção dentro de um conjunto de opções mutuamente exclusivas.
 
 ## Example
 

@@ -6,7 +6,7 @@
 import { LevelIndicator, LevelIndicatorGroup, LevelIndicatorLabel } from "@lucasdost/design-system"
 ```
 
-Shows a level as rows of items. Mirrors the three Figma levels: Level Indicator Label adds the text around the indicator, Level Indicator sets Size and holds the groups, and each Level Indicator Group has its own Count, Active and Color.
+Serve para representar visualmente um nível em uma escala segmentada, facilitando a identificação e a comparação de valores.
 
 ## Example
 

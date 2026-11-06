@@ -6,7 +6,7 @@
 import { Checkbox, CheckboxGroup } from "@lucasdost/design-system"
 ```
 
-Toggles a single option on or off. Mirrors the Figma Checkbox: State (Default / Read Only / Disabled), Active, Indeterminate, Label, Label Position, Description and Nested.
+Serve para selecionar um ou mais itens de uma lista, ou ativar e desativar um item em particular.
 
 ## Example
 

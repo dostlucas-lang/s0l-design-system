@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react-vite"
 import { withThemeByClassName } from "@storybook/addon-themes"
+import { create } from "storybook/theming"
 
 import "../styles/globals.css"
 import "./preview.css"
@@ -23,6 +24,15 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+    docs: {
+      // Docs pages (MDX, Meta, ArgTypes, Controls) use Text/Font Family/Primary
+      // instead of the Storybook font.
+      theme: create({
+        base: "light",
+        fontBase: "var(--s0l-text-font-family-primary)",
+        fontCode: "var(--font-mono)",
+      }),
     },
     a11y: {
       // "todo" reports violations in the panel without failing tests.

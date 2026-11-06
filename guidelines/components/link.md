@@ -6,7 +6,7 @@
 import { Link, linkVariants } from "@lucasdost/design-system"
 ```
 
-A text link to another page or section. Mirrors the Figma Link component: Color (Neutral / Accent, named Brand in Figma / Danger / Inverse) × Size (Small / Medium) × State (Default / Hover / Disabled), with Icon Left and Icon Right. Hover underlines the label and follows the browser; Disabled comes from props.
+Serve para navegar para outra página, acessar recursos ou desencadear ações.
 
 ## Example
 

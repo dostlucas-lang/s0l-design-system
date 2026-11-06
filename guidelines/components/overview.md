@@ -7,61 +7,61 @@ Every component is a named export of `@lucasdost/design-system`. Read the file o
 | Component | What it is | File | Exports |
 | --- | --- | --- | --- |
 | Accordion | Serve para organizar conteúdos em seções expansíveis, exibindo ou ocultando informações sob demanda para reduzir a complexidade visual. | [accordion.md](./accordion.md) | `Accordion`, `AccordionItem`, `AccordionTrigger`, `AccordionContent` |
-| Alert | Displays a callout for user attention. | [alert.md](./alert.md) | `Alert`, `AlertAction` |
-| Avatar | An image element with a fallback for representing the user. | [avatar.md](./avatar.md) | `Avatar`, `AvatarImage`, `AvatarFallback` |
-| Backdrop | Dims the screen behind an overlay. | [backdrop.md](./backdrop.md) | `Backdrop` |
-| Badge | A small count or status dot, often on the corner of another element. | [badge.md](./badge.md) | `Badge`, `BadgeObject` |
-| Bottom Bar | The main navigation of a mobile screen: 2 to 4 destinations in a floating pill. | [bottom-bar.md](./bottom-bar.md) | `BottomBar`, `BottomBarItem` |
-| Bottom Sheet | A panel that slides up from the bottom of the screen. | [bottom-sheet.md](./bottom-sheet.md) | `BottomSheet`, `BottomSheetTrigger`, `BottomSheetClose`, `BottomSheetOverlay`, `BottomSheetContent`, `BottomSheetHandler`, `BottomSheetHeader`, `BottomSheetTitle`, `BottomSheetSearch`, `BottomSheetBody`, `BottomSheetFooter` |
-| Breadcrumb | Shows the path to the current resource in a hierarchy. | [breadcrumb.md](./breadcrumb.md) | `Breadcrumb`, `BreadcrumbList`, `BreadcrumbItem`, `BreadcrumbLink`, `BreadcrumbPage`, `BreadcrumbSeparator` |
-| Button | Triggers an action or event. | [button.md](./button.md) | `Button` |
+| Alert | Serve para exibir mensagens iniciadas pelo sistema, persistentes e contextuais dentro do fluxo da interface. | [alert.md](./alert.md) | `Alert`, `AlertAction` |
+| Avatar | Serve para representar usuários, contas ou entidades por meio de imagem ou iniciais, facilitando identificação visual rápida dos usuários. | [avatar.md](./avatar.md) | `Avatar`, `AvatarImage`, `AvatarFallback` |
+| Backdrop | Serve para atenuar visualmente o conteúdo ao fundo, direcionando o foco para um elemento sobreposto. | [backdrop.md](./backdrop.md) | `Backdrop` |
+| Badge | Serve para destacar informações complementares, status, notificações ou quantidades de forma rápida e contextual. | [badge.md](./badge.md) | `Badge`, `BadgeObject` |
+| Bottom Bar | Serve para navegar entre as principais seções da aplicação por meio de uma barra na parte inferior da tela. | [bottom-bar.md](./bottom-bar.md) | `BottomBar`, `BottomBarItem` |
+| Bottom Sheet | Serve para exibir conteúdos, ações ou seletores em dispositivos móveis, substituindo menus flutuantes em geral. | [bottom-sheet.md](./bottom-sheet.md) | `BottomSheet`, `BottomSheetTrigger`, `BottomSheetClose`, `BottomSheetOverlay`, `BottomSheetContent`, `BottomSheetHandler`, `BottomSheetHeader`, `BottomSheetTitle`, `BottomSheetSearch`, `BottomSheetBody`, `BottomSheetFooter` |
+| Breadcrumb | Serve para exibir a hierarquia de navegação, indicando a localização atual do usuário dentro da estrutura do sistema e facilitando o retorno a níveis anteriores. | [breadcrumb.md](./breadcrumb.md) | `Breadcrumb`, `BreadcrumbList`, `BreadcrumbItem`, `BreadcrumbLink`, `BreadcrumbPage`, `BreadcrumbSeparator` |
+| Button | Serve para executar uma ação com um clique e comunicar o que acontecerá em seguida. | [button.md](./button.md) | `Button` |
 | Calendar | Lets users pick a day, a month, a year or a range of days. | [calendar.md](./calendar.md) | `Calendar`, `CalendarButton`, `CalendarDayButton` |
-| Card | A surface that groups a title, description and actions about one subject. | [card.md](./card.md) | `Card`, `CardMoreActions` |
-| Carousel | Shows one slide at a time with arrows and indicators. | [carousel.md](./carousel.md) | `Carousel`, `CarouselContent`, `CarouselItem`, `CarouselPrevious`, `CarouselNext`, `CarouselIndicators`, `CarouselControls` |
-| Chart Bar | A stacked bar with its Legend. | [chart-bar.md](./chart-bar.md) | `ChartBar` |
-| Chart Donut | A donut chart with its Legend. | [chart-donut.md](./chart-donut.md) | `ChartDonut` |
+| Card | Serve para agrupar informações relacionadas e ações associadas em uma única unidade visual. | [card.md](./card.md) | `Card`, `CardMoreActions` |
+| Carousel | Serve para exibir conteúdos em sequência horizontal, navegáveis por interação, economizando espaço e organizando informações relacionadas. | [carousel.md](./carousel.md) | `Carousel`, `CarouselContent`, `CarouselItem`, `CarouselPrevious`, `CarouselNext`, `CarouselIndicators`, `CarouselControls` |
+| Chart Bar | Serve para representar visualmente a composição de um valor total por meio de segmentos proporcionais. | [chart-bar.md](./chart-bar.md) | `ChartBar` |
+| Chart Donut | Serve para destacar a participação relativa de cada categoria em um conjunto de dados, mantendo o valor consolidado em evidência no centro. | [chart-donut.md](./chart-donut.md) | `ChartDonut` |
 | Chart Legend | Mirrors the Figma Chart Legend, shared by the charts: Inline wraps its items and List stacks them, with the values on the right. | [chart-legend.md](./chart-legend.md) | `ChartLegend`, `ChartLegendSwatch` |
-| Chart Line | A line chart with its axes and Legend. | [chart-line.md](./chart-line.md) | `ChartLine` |
-| Checkbox | Toggles a single option on or off. | [checkbox.md](./checkbox.md) | `Checkbox`, `CheckboxGroup` |
-| Chip | A compact toggle for filters and quick choices. | [chip.md](./chip.md) | `Chip`, `ChipGroup`, `ChipMenu` |
-| Data Item | A read-only value with its label, like a field that can't be edited: the input .Label, the value in Body/Medium, up to three Button Ghost actions (copy, share…) and the .Text Help. | [data-item.md](./data-item.md) | `DataItem`, `DataItemAction` |
-| Data Table | A Table with its header, search, bulk actions and pagination. | [data-table.md](./data-table.md) | `DataTable`, `DataTableBulkActionBar`, `DataTableHeader`, `DataTablePagination` |
-| Date Picker | A date field with a calendar. | [date-picker.md](./date-picker.md) | `DatePicker` |
-| Divider | Visually divides content. | [divider.md](./divider.md) | `Divider` |
-| Drawer | A panel that slides in from an edge of the screen over the page. | [drawer.md](./drawer.md) | `Drawer`, `DrawerTrigger`, `DrawerClose`, `DrawerContent`, `DrawerHeader`, `DrawerTitle`, `DrawerBody`, `DrawerFooter` |
-| Dropdown | A menu of actions or options triggered by a button. | [dropdown.md](./dropdown.md) | `DropdownItemCheck`, `DropdownItemIcon`, `DropdownItemText`, `Dropdown`, `DropdownPortal`, `DropdownTrigger`, `DropdownContent`, `DropdownGroup`, `DropdownItem`, `DropdownCheckboxItem`, `DropdownRadioGroup`, `DropdownRadioItem`, `DropdownSeparator`, `DropdownSub`, `DropdownSubTrigger`, `DropdownSubContent` |
-| Empty State | Placeholder shown when there is no content to display. | [empty-state.md](./empty-state.md) | `EmptyState`, `EmptyStateIcon`, `EmptyStateHeader`, `EmptyStateTitle`, `EmptyStateDescription`, `EmptyStateActions` |
-| Icon Colors | A Hugeicons icon tinted with a semantic color, optionally in a container. | [icon-colors.md](./icon-colors.md) | `IconColors` |
+| Chart Line | Serve para representar a variação de um ou mais conjuntos de dados ao longo do tempo. | [chart-line.md](./chart-line.md) | `ChartLine` |
+| Checkbox | Serve para selecionar um ou mais itens de uma lista, ou ativar e desativar um item em particular. | [checkbox.md](./checkbox.md) | `Checkbox`, `CheckboxGroup` |
+| Chip | Serve para selecionar uma ou múltiplas opções dentre uma série de opções disponíveis. | [chip.md](./chip.md) | `Chip`, `ChipGroup`, `ChipMenu` |
+| Data Item | Serve para exibir informações importantes de forma estruturada, legível e não editável. | [data-item.md](./data-item.md) | `DataItem`, `DataItemAction` |
+| Data Table | Serve para exibir dados estruturados em formato tabular, permitindo análise e interação por meio de recursos como ordenação, filtros e seleção. | [data-table.md](./data-table.md) | `DataTable`, `DataTableBulkActionBar`, `DataTableHeader`, `DataTablePagination` |
+| Date Picker | Serve para selecionar uma data ou intervalo de datas. | [date-picker.md](./date-picker.md) | `DatePicker` |
+| Divider | Serve para separar visualmente conteúdos ou seções, facilitando a organização e a leitura das informações. | [divider.md](./divider.md) | `Divider` |
+| Drawer | Serve para exibir conteúdos complementares ou permitir a execução de tarefas sem abandonar o contexto da página. | [drawer.md](./drawer.md) | `Drawer`, `DrawerTrigger`, `DrawerClose`, `DrawerContent`, `DrawerHeader`, `DrawerTitle`, `DrawerBody`, `DrawerFooter` |
+| Dropdown | Serve para exibir uma lista de opções ou ações de forma contextual, permitindo seleção única, múltipla ou execução de ações. | [dropdown.md](./dropdown.md) | `DropdownItemCheck`, `DropdownItemIcon`, `DropdownItemText`, `Dropdown`, `DropdownPortal`, `DropdownTrigger`, `DropdownContent`, `DropdownGroup`, `DropdownItem`, `DropdownCheckboxItem`, `DropdownRadioGroup`, `DropdownRadioItem`, `DropdownSeparator`, `DropdownSub`, `DropdownSubTrigger`, `DropdownSubContent` |
+| Empty State | Serve para representar a ausência de conteúdo ou resultados em uma interface, orientando o usuário sobre o motivo e o próximo passo a ser tomado. | [empty-state.md](./empty-state.md) | `EmptyState`, `EmptyStateIcon`, `EmptyStateHeader`, `EmptyStateTitle`, `EmptyStateDescription`, `EmptyStateActions` |
+| Icon Colors | Serve para destacar um ícone, reforçando significado, hierarquia ou status. | [icon-colors.md](./icon-colors.md) | `IconColors` |
 | Icon | The Figma icons are drawn with a 1.8 stroke on the 24×24 grid (1.2px at 16px, 1.5px at 20px, 1.8px at 24px); Hugeicons ships 1.5. | [icon.md](./icon.md) | `HugeiconsIcon` |
-| Input Area | A multi-line text field. | [input-area.md](./input-area.md) | `InputArea` |
+| Input Area | Permite inserir uma quantidade maior de texto do que um Input Field convencional. | [input-area.md](./input-area.md) | `InputArea` |
 | Input Base | Pieces shared by the Figma Input components (Input Text, Input Number, Input Search, Input Password, Input Area): Field, Button Clear and Text Help / Text Error, plus the Label component. | [input-base.md](./input-base.md) | `InputAction`, `InputClearButton`, `InputLabel`, `InputMessage`, `InputRoot` |
-| Input File | An Upload Area to pick or drop files, above the File Item List. | [input-file.md](./input-file.md) | `DownloadIcon`, `FileItem`, `IconFileFormat`, `InputFile`, `TrashIcon` |
-| Input Number | A number field with Minus and Plus buttons. | [input-number.md](./input-number.md) | `InputNumber` |
-| Input Otp | One-time password input split into items. | [input-otp.md](./input-otp.md) | `InputOTP`, `InputOTPGroup`, `InputOTPSlot`, `InputOTPSeparator` |
-| Input Password | A password field built on Input Text, with Button View to show or hide the characters. | [input-password.md](./input-password.md) | `InputPassword` |
-| Input Search | A search field built on Input Text. | [input-search.md](./input-search.md) | `InputSearch` |
-| Input Select | Picks a value from a list of options. | [input-select.md](./input-select.md) | `InputSelect`, `InputSelectContent`, `InputSelectGroup`, `InputSelectGroupLabel`, `InputSelectItem`, `InputSelectSeparator` |
-| Input Text | A single-line text field. | [input-text.md](./input-text.md) | `InputText` |
-| Kbd | Displays a keyboard key or shortcut. | [kbd.md](./kbd.md) | `Kbd`, `KbdGroup` |
-| Label | The label of a control, with the optional requirement text and Info icon, which shows the `info` text in a tooltip. | [label.md](./label.md) | `Label` |
-| Level Indicator | Shows a level as rows of items. | [level-indicator.md](./level-indicator.md) | `LevelIndicator`, `LevelIndicatorGroup`, `LevelIndicatorLabel` |
-| Link | A text link to another page or section. | [link.md](./link.md) | `Link` |
-| List Item | A row of a list: label and description with optional drag handle, checkbox, icon, details and tag on the left, and text, tag, arrow or buttons on the right. | [list-item.md](./list-item.md) | `ListItem`, `ListItemContentLeft`, `ListItemTrendIcon` |
-| Modal | A window overlaid on the page. | [modal.md](./modal.md) | `Modal`, `ModalTrigger`, `ModalClose`, `ModalPortal`, `ModalOverlay`, `ModalContent`, `ModalHeader`, `ModalTitle`, `ModalBody`, `ModalDescription`, `ModalFooter` |
-| Pagination | Navigation between pages of content. | [pagination.md](./pagination.md) | `Pagination`, `PaginationContent`, `PaginationEllipsis`, `PaginationItem`, `PaginationLink`, `PaginationNext`, `PaginationPrevious`, `PaginationRoot`, `PaginationSummary` |
+| Input File | Serve para importar um ou mais arquivos por seleção manual ou arrastar e soltar, exibindo o status ao longo do carregamento. | [input-file.md](./input-file.md) | `DownloadIcon`, `FileItem`, `IconFileFormat`, `InputFile`, `TrashIcon` |
+| Input Number | Serve para inserir ou ajustar valores numéricos de forma controlada. | [input-number.md](./input-number.md) | `InputNumber` |
+| Input Otp | Serve para inserir códigos de verificação segmentados, distribuindo cada caractere em campos individuais. | [input-otp.md](./input-otp.md) | `InputOTP`, `InputOTPGroup`, `InputOTPSlot`, `InputOTPSeparator` |
+| Input Password | Serve para inserir senhas de forma segura, permitindo exibir ou ocultar os caracteres digitados. | [input-password.md](./input-password.md) | `InputPassword` |
+| Input Search | Serve para encontrar conteúdo relevante ao inserir palavras-chave. | [input-search.md](./input-search.md) | `InputSearch` |
+| Input Select | Serve para selecionar uma ou múltiplas opções a partir de uma lista flutuante. | [input-select.md](./input-select.md) | `InputSelect`, `InputSelectContent`, `InputSelectGroup`, `InputSelectGroupLabel`, `InputSelectItem`, `InputSelectSeparator` |
+| Input Text | Serve para inserir dados textuais. | [input-text.md](./input-text.md) | `InputText` |
+| Kbd | Serve para representar teclas ou atalhos de teclado, facilitando a identificação dos comandos disponíveis na interface. | [kbd.md](./kbd.md) | `Kbd`, `KbdGroup` |
+| Label | Serve para identificar um campo de formulário, indicando sua obrigatoriedade e oferecendo informações complementares quando necessário. | [label.md](./label.md) | `Label` |
+| Level Indicator | Serve para representar visualmente um nível em uma escala segmentada, facilitando a identificação e a comparação de valores. | [level-indicator.md](./level-indicator.md) | `LevelIndicator`, `LevelIndicatorGroup`, `LevelIndicatorLabel` |
+| Link | Serve para navegar para outra página, acessar recursos ou desencadear ações. | [link.md](./link.md) | `Link` |
+| List Item | Serve para exibir conteúdos em formato sequencial, priorizando leitura, varredura rápida e ações associadas a cada item. | [list-item.md](./list-item.md) | `ListItem`, `ListItemContentLeft`, `ListItemTrendIcon` |
+| Modal | Serve para interromper momentaneamente a interação com o restante da tela, voltando a atenção da pessoa usuária para uma informação importante. | [modal.md](./modal.md) | `Modal`, `ModalTrigger`, `ModalClose`, `ModalPortal`, `ModalOverlay`, `ModalContent`, `ModalHeader`, `ModalTitle`, `ModalBody`, `ModalDescription`, `ModalFooter` |
+| Pagination | Serve para dividir grandes volumes de conteúdo em múltiplas páginas, permitindo navegação entre elas. | [pagination.md](./pagination.md) | `Pagination`, `PaginationContent`, `PaginationEllipsis`, `PaginationItem`, `PaginationLink`, `PaginationNext`, `PaginationPrevious`, `PaginationRoot`, `PaginationSummary` |
 | Popover | Rich content in a floating panel anchored to a trigger. | [popover.md](./popover.md) | `Popover`, `PopoverContent`, `PopoverDescription`, `PopoverHeader`, `PopoverTitle`, `PopoverTrigger` |
-| Progress Bar | Shows how far a task has gone. | [progress-bar.md](./progress-bar.md) | `ProgressBar` |
-| Radio Button | A set of options where only one can be selected. | [radio-button.md](./radio-button.md) | `RadioButton`, `RadioGroup` |
-| Skeleton | Placeholder shown while content is loading. | [skeleton.md](./skeleton.md) | `Skeleton` |
-| Slider | Selects a value or range within bounds. | [slider.md](./slider.md) | `Slider` |
-| Spinner | Indicates an ongoing loading state. | [spinner.md](./spinner.md) | `Spinner` |
-| Stats | A key number with its label, change and context. | [stats.md](./stats.md) | `Stats` |
-| Stepper | Shows the steps of a flow and where the user is. | [stepper.md](./stepper.md) | `Stepper` |
-| Table | Displays tabular data. | [table.md](./table.md) | `Table`, `TableActions`, `TableBody`, `TableCell`, `TableCellAccordion`, `TableCellActions`, `TableCellSelection`, `TableCellSkeleton`, `TableEmpty`, `TableHead`, `TableHeader`, `TableRow`, `TableRowAccordion` |
-| Tabs | Switches between related panels of content. | [tabs.md](./tabs.md) | `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent` |
-| Tag | A short label for status, categories or filters. | [tag.md](./tag.md) | `Tag` |
-| Tile | A shortcut to an action or a page: an icon and a label on a raised surface. | [tile.md](./tile.md) | `Tile`, `TileCarousel` |
-| Timeline | Lists events in order along a dotted line. | [timeline.md](./timeline.md) | `Timeline`, `TimelineItem` |
-| Toast | A short, temporary notification. | [toast.md](./toast.md) | `Toaster`, `Toast`, `ToastAction`, `ToastClose`, `ToastContent`, `ToastDescription`, `ToastPortal`, `ToastProvider`, `ToastTitle`, `ToastViewport` |
-| Toggle Switch | Toggles a setting on or off. | [toggle-switch.md](./toggle-switch.md) | `ToggleSwitch` |
-| Tooltip | Shows a hint when hovering or focusing an element. | [tooltip.md](./tooltip.md) | `Tooltip`, `TooltipTrigger`, `TooltipContent`, `TooltipProvider` |
+| Progress Bar | Serve para representar visualmente o progresso de uma tarefa em relação a um total conhecido, permitindo entender quanto já foi concluído e quanto ainda falta. | [progress-bar.md](./progress-bar.md) | `ProgressBar` |
+| Radio Button | Serve para selecionar uma única opção dentro de um conjunto de opções mutuamente exclusivas. | [radio-button.md](./radio-button.md) | `RadioButton`, `RadioGroup` |
+| Skeleton | Serve para representar visualmente o carregamento de conteúdo, simulando a estrutura da interface antes que os dados reais sejam exibidos. | [skeleton.md](./skeleton.md) | `Skeleton` |
+| Slider | Serve para selecionar valores dentro de um intervalo, por meio de interação direta com um controle deslizante. | [slider.md](./slider.md) | `Slider` |
+| Spinner | Serve para representar visualmente o processamento de uma operação rápida do sistema, em que a duração não importa ou não pode ser prevista. | [spinner.md](./spinner.md) | `Spinner` |
+| Stats | Serve para apresentar indicadores numéricos de alta relevância, permitindo a compreensão rápida de métricas importantes da aplicação. | [stats.md](./stats.md) | `Stats` |
+| Stepper | Serve para indicar o progresso de um fluxo dividido em etapas sequenciais, ajudando a entender a posição atual e o que falta concluir. | [stepper.md](./stepper.md) | `Stepper` |
+| Table | Serve para exibir dados estruturados em formato tabular, facilitando a leitura e a comparação de informações. | [table.md](./table.md) | `Table`, `TableActions`, `TableBody`, `TableCell`, `TableCellAccordion`, `TableCellActions`, `TableCellSelection`, `TableCellSkeleton`, `TableEmpty`, `TableHead`, `TableHeader`, `TableRow`, `TableRowAccordion` |
+| Tabs | Serve para organizar o conteúdo em seções e permitir a navegação entre elas. | [tabs.md](./tabs.md) | `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent` |
+| Tag | Serve para representar itens, categorias ou atributos de forma compacta, facilitando a identificação e organização de informações na interface. | [tag.md](./tag.md) | `Tag` |
+| Tile | Serve para destacar ações, atalhos ou caminhos principais de navegação dentro de uma página, facilitando acesso rápido às funcionalidades mais importantes do fluxo. | [tile.md](./tile.md) | `Tile`, `TileCarousel` |
+| Timeline | Serve para organizar eventos em ordem cronológica, facilitando a leitura de histórico, progresso ou sequência de ações ao longo do tempo. | [timeline.md](./timeline.md) | `Timeline`, `TimelineItem` |
+| Toast | Serve para exibir mensagens rápidas e flutuantes em resposta a ações do usuário, com mínima interrupção da interface. | [toast.md](./toast.md) | `Toaster`, `Toast`, `ToastAction`, `ToastClose`, `ToastContent`, `ToastDescription`, `ToastPortal`, `ToastProvider`, `ToastTitle`, `ToastViewport` |
+| Toggle Switch | Serve para ativar ou desativar uma configuração de forma imediata, representando uma escolha binária entre dois estados: ligado e desligado. | [toggle-switch.md](./toggle-switch.md) | `ToggleSwitch` |
+| Tooltip | Serve para fornecer informações complementares de forma contextual e temporária, acionado por hover ou foco. | [tooltip.md](./tooltip.md) | `Tooltip`, `TooltipTrigger`, `TooltipContent`, `TooltipProvider` |

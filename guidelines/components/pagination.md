@@ -6,7 +6,7 @@
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious, PaginationRoot, PaginationSummary, getPaginationRange } from "@lucasdost/design-system"
 ```
 
-Navigation between pages of content. Mirrors the Figma Pagination component: Type (Buttons / Simple) × Size (Small / Medium) × Page Count (≤ 7 / > 7) × Current Page (First / Mid / Last). Page Count and Current Page follow `pageCount` and `page`.
+Serve para dividir grandes volumes de conteúdo em múltiplas páginas, permitindo navegação entre elas.
 
 ## Example
 

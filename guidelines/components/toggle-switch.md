@@ -6,7 +6,7 @@
 import { ToggleSwitch } from "@lucasdost/design-system"
 ```
 
-Toggles a setting on or off. Mirrors the Figma Toggle Switch component: State (Default / Read Only / Disabled) × Active × Show Label × Label Position.
+Serve para ativar ou desativar uma configuração de forma imediata, representando uma escolha binária entre dois estados: ligado e desligado.
 
 ## Example
 
