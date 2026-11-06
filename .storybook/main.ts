@@ -16,7 +16,11 @@ const config: StorybookConfig = {
     name: "@storybook/react-vite",
     options: {},
   },
-  staticDirs: ["../public"],
+  staticDirs: [
+    "../public",
+    // Barlow files for the manager UI (see manager-head.html).
+    { from: "../node_modules/@fontsource/barlow/files", to: "/fonts/barlow" },
+  ],
   // The `@/` imports (components.json aliases) point at the repo root, like in
   // tsconfig.json and vite.lib.config.ts.
   // Tailwind runs through @tailwindcss/vite, like in the apps that use the
