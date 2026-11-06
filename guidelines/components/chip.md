@@ -6,7 +6,7 @@
 import { Chip, ChipGroup, ChipMenu, chipVariants, formatChipValues } from "@lucasdost/design-system"
 ```
 
-A compact toggle for filters and quick choices. Mirrors the Figma Chip: Size (Small / Medium) × State (Default / Hover / Disabled) × Active × Menu, with Show Icon. Chip Group lays chips out with a label and help text.
+Serve para selecionar uma ou múltiplas opções dentre uma série de opções disponíveis.
 
 ## Example
 

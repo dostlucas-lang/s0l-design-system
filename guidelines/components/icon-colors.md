@@ -6,7 +6,7 @@
 import { IconColors, iconColorsVariants } from "@lucasdost/design-system"
 ```
 
-A Hugeicons icon tinted with a semantic color, optionally in a container.
+Serve para destacar um ícone, reforçando significado, hierarquia ou status.
 
 ## Example
 

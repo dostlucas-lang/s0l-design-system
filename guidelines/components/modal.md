@@ -6,7 +6,7 @@
 import { Modal, ModalTrigger, ModalClose, ModalPortal, ModalOverlay, ModalContent, ModalHeader, ModalTitle, ModalBody, ModalDescription, ModalFooter } from "@lucasdost/design-system"
 ```
 
-A window overlaid on the page.
+Serve para interromper momentaneamente a interação com o restante da tela, voltando a atenção da pessoa usuária para uma informação importante.
 
 ## Example
 

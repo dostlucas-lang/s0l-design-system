@@ -6,7 +6,7 @@
 import { ChartBar } from "@lucasdost/design-system"
 ```
 
-A stacked bar with its Legend. Mirrors the Figma Chart Bar: give it `items`, and each segment is as wide as its share of the values. The total row is always the sum of the items. With a `max` above that sum, the rest of the Track shows, as in Items=1. It takes 100% of the width of its container.
+Serve para representar visualmente a composição de um valor total por meio de segmentos proporcionais.
 
 ## Example
 

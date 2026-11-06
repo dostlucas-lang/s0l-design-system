@@ -6,7 +6,7 @@
 import { ListItem, ListItemContentLeft, ListItemTrendIcon, listItemVariants } from "@lucasdost/design-system"
 ```
 
-A row of a list: label and description with optional drag handle, checkbox, icon, details and tag on the left, and text, tag, arrow or buttons on the right. Mirrors the Figma List Item: Type (Discreet / Divider / Container) × State (Default / Pressed / Disabled), with the .List Item Content Left and Content Right partials as props. With `clickable` (the default when `onClick` is set) the whole item is clickable and shows Pressed on hover and press; with `clickable={false}` it has no hover and only the nested Buttons and Checkboxes respond. Stop propagation in nested buttons and checkboxes so they don't also trigger a clickable item.
+Serve para exibir conteúdos em formato sequencial, priorizando leitura, varredura rápida e ações associadas a cada item.
 
 ## Example
 

@@ -6,7 +6,7 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, CarouselIndicators, CarouselControls, useCarousel } from "@lucasdost/design-system"
 ```
 
-Shows one slide at a time with arrows and indicators. Mirrors the Figma Carousel: Items (2 / 3 / 4 / 5 / > 5) × Current Item (First / Mid / Last). Above 5 slides only 5 indicators show, and an end one shrinks while more slides sit past it. Arrow keys, the arrows, the indicators and swiping all change the slide.
+Serve para exibir conteúdos em sequência horizontal, navegáveis por interação, economizando espaço e organizando informações relacionadas.
 
 ## Figma notes
 

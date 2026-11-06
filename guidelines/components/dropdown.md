@@ -6,7 +6,7 @@
 import { dropdownPopupClassName, dropdownBodyClassName, dropdownItemClassName, DropdownItemCheck, DropdownItemIcon, DropdownItemText, Dropdown, DropdownPortal, DropdownTrigger, DropdownContent, DropdownGroup, DropdownItem, DropdownCheckboxItem, DropdownRadioGroup, DropdownRadioItem, DropdownSeparator, DropdownSub, DropdownSubTrigger, DropdownSubContent } from "@lucasdost/design-system"
 ```
 
-A menu of actions or options triggered by a button. Mirrors the Figma Dropdown: Type (Actions / Selection Single / Selection Multiple) × Sections (1–4). Mobile=True shows the same menu as the Figma Bottom Sheet.
+Serve para exibir uma lista de opções ou ações de forma contextual, permitindo seleção única, múltipla ou execução de ações.
 
 ## Example
 

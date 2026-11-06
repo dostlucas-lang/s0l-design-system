@@ -6,7 +6,7 @@
 import { Kbd, KbdGroup } from "@lucasdost/design-system"
 ```
 
-Displays a keyboard key or shortcut.
+Serve para representar teclas ou atalhos de teclado, facilitando a identificação dos comandos disponíveis na interface.
 
 ## Example
 

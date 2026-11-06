@@ -6,7 +6,7 @@
 import { Toaster, Toast, ToastAction, ToastClose, ToastContent, ToastDescription, ToastPortal, ToastProvider, ToastTitle, ToastViewport, createToastManager, toast, useToastManager } from "@lucasdost/design-system"
 ```
 
-A short, temporary notification. Mirrors the Figma Toast component: Color × Decoration (Icon / Avatar / Image), with title, description, up to two actions and Button Close. Use `toast.add()` from `@/components/ui/toast` with a `<Toaster />` mounted once in the app: `type` sets the Color, `actionProps` is Action 1, and `data` takes `avatar`, `image`, `secondaryAction` (Action 2) and `dismissable`.
+Serve para exibir mensagens rápidas e flutuantes em resposta a ações do usuário, com mínima interrupção da interface.
 
 ## Example
 

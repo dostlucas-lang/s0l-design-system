@@ -6,7 +6,7 @@
 import { Skeleton } from "@lucasdost/design-system"
 ```
 
-Placeholder shown while content is loading.
+Serve para representar visualmente o carregamento de conteúdo, simulando a estrutura da interface antes que os dados reais sejam exibidos.
 
 ## Example
 

@@ -6,7 +6,7 @@
 import { Drawer, DrawerTrigger, DrawerClose, DrawerContent, DrawerHeader, DrawerTitle, DrawerBody, DrawerFooter } from "@lucasdost/design-system"
 ```
 
-A panel that slides in from an edge of the screen over the page.
+Serve para exibir conteúdos complementares ou permitir a execução de tarefas sem abandonar o contexto da página.
 
 ## Example
 

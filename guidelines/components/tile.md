@@ -6,7 +6,7 @@
 import { Tile, TileCarousel, tileSurfaceVariants } from "@lucasdost/design-system"
 ```
 
-A shortcut to an action or a page: an icon and a label on a raised surface. Mirrors the Figma Tile: Size (Small / Medium / Large) × State (Default / Hover / Disabled) + Focus. Renders a `<button>`, or a link through `render`. `TileCarousel` is the Figma Tile Carousel: a row of Tiles between two arrows.
+Serve para destacar ações, atalhos ou caminhos principais de navegação dentro de uma página, facilitando acesso rápido às funcionalidades mais importantes do fluxo.
 
 ## Example
 
