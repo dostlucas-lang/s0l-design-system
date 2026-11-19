@@ -7,19 +7,20 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-// Mirrors the Figma Link component: Color (Neutral / Accent, named Brand in
-// Figma / Danger / Inverse) × Size (Small / Medium) × State (Default / Hover /
-// Disabled), with Icon Left and Icon Right. Hover underlines the label; Focus is the
-// 3px Border/Accent/Strong ring 2px away, with Border/Radius/Small. Renders
-// an <a>; pass `render` for a router link (e.g. Next's <Link>).
+// Mirrors the Figma Link component: Color (Neutral / Accent / Danger /
+// Inverse) × Size (Small / Medium) × State (Default / Hover / Disabled), with
+// Icon Left and Icon Right. Accent and Danger use the Standard text and icon
+// tokens. Hover underlines the label; Focus is the 3px Border/Accent/Strong
+// ring 2px away, with Border/Radius/Small. Renders an <a>; pass `render` for a
+// router link (e.g. Next's <Link>).
 const linkVariants = cva(
   "group/link inline-flex w-fit items-center justify-center rounded-sm whitespace-nowrap outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-border-accent-strong focus-visible:outline-solid [&_svg]:shrink-0",
   {
     variants: {
       color: {
         neutral: "text-text-primary [&_svg]:text-icon-primary",
-        accent: "text-text-accent-display [&_svg]:text-icon-accent-display",
-        danger: "text-text-danger-display [&_svg]:text-icon-danger-display",
+        accent: "text-text-accent-standard [&_svg]:text-icon-accent-standard",
+        danger: "text-text-danger-standard [&_svg]:text-icon-danger-standard",
         inverse: "text-text-inverse [&_svg]:text-icon-inverse",
       },
       size: {

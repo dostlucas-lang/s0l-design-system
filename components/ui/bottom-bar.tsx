@@ -8,10 +8,11 @@ import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import { HugeiconsIcon, type IconSvgElement } from "@/components/ui/icon"
 
-// Mirrors the Figma Bottom Bar: a Background/Surface pill with Shadow/Large
-// and 8px padding, holding 2, 3 or 4 .Bottom Bar Button items side by side
-// (Figma Items=2 / 3 / 4). It only draws the bar: pin it to the bottom of the
-// screen where it's used.
+// Mirrors the Figma Bottom Bar: a Background/Surface pill with Shadow/Large, a
+// 1px Border/Secondary stroke and 8px padding, holding 2, 3 or 4 .Bottom Bar
+// Button items side by side (Figma Items=2 / 3 / 4). It only draws the bar:
+// pin it to the bottom of the screen where it's used. The stroke is Inside in
+// Figma: an inset ring, so it takes no space and stacks with the shadow.
 function BottomBar({
   className,
   "aria-label": ariaLabel = "Main",
@@ -22,7 +23,7 @@ function BottomBar({
       data-slot="bottom-bar"
       aria-label={ariaLabel}
       className={cn(
-        "inline-flex items-center rounded-full bg-background-surface p-2 shadow-lg",
+        "inline-flex items-center rounded-full bg-background-surface p-2 shadow-lg inset-ring inset-ring-border-secondary",
         className
       )}
       {...props}
