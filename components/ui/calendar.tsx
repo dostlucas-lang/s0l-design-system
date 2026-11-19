@@ -54,13 +54,14 @@ const capitalize = (text: string) =>
 
 // Figma Date Time Picker Button: a 40px cell in Body/Medium with the ghost
 // Button hover / pressed overlay. State=Active is the Button Primary fill
-// with Label/Medium in Text/Inverse; Disabled is Text/Disabled.
+// with Label/Medium in Button/Primary/Standard/Label; Disabled is
+// Text/Disabled.
 const cellClassName = cn(
   "group/cell relative isolate flex min-h-10 w-full min-w-10 flex-col items-center justify-center rounded-md text-body-medium text-text-primary outline-none select-none",
   "after:pointer-events-none after:absolute after:inset-0 after:-z-10 after:rounded-[inherit] after:transition-colors hover:after:bg-background-hover active:after:bg-background-pressed",
   "focus-visible:z-10 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-border-accent-strong focus-visible:outline-solid",
   "disabled:pointer-events-none disabled:text-text-disabled",
-  "data-active:bg-button-primary-standard-background data-active:text-label-medium data-active:text-text-inverse"
+  "data-active:bg-button-primary-standard-background data-active:text-label-medium data-active:text-button-primary-standard-label"
 )
 
 // One cell of the Day, Month or Year grid. `disabled`, `active` and `today`
@@ -87,12 +88,12 @@ function CalendarButton({
     >
       {children}
       {today && (
-        // Icon/Accent/Standard, Icon/Inverse on the Active fill and
-        // Icon/Disabled on disabled days.
+        // Icon/Accent/Standard, Button/Primary/Standard/Icon on the Active
+        // fill and Icon/Disabled on disabled days.
         <span
           aria-hidden="true"
           data-slot="calendar-today"
-          className="absolute bottom-1 left-1/2 size-1.5 -translate-x-1/2 rounded-full bg-icon-accent-standard group-disabled/cell:bg-icon-disabled group-data-outside/cell:bg-icon-disabled group-data-active/cell:bg-icon-inverse"
+          className="absolute bottom-1 left-1/2 size-1.5 -translate-x-1/2 rounded-full bg-icon-accent-standard group-disabled/cell:bg-icon-disabled group-data-outside/cell:bg-icon-disabled group-data-active/cell:bg-button-primary-standard-icon"
         />
       )}
     </button>
