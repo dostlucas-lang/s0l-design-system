@@ -93,7 +93,7 @@ function CalendarButton({
         <span
           aria-hidden="true"
           data-slot="calendar-today"
-          className="absolute bottom-1 left-1/2 size-1.5 -translate-x-1/2 rounded-full bg-icon-accent-standard group-disabled/cell:bg-icon-disabled group-data-outside/cell:bg-icon-disabled group-data-active/cell:bg-button-primary-standard-icon"
+          className="absolute bottom-1 left-1/2 size-1.5 -translate-x-1/2 rounded-full bg-icon-accent-standard group-disabled/cell:bg-icon-disabled group-data-active/cell:bg-button-primary-standard-icon"
         />
       )}
     </button>
@@ -210,8 +210,9 @@ function CalendarDayButton({
     if (modifiers.focused) ref.current?.focus()
   }, [modifiers.focused])
 
-  // Days from other months keep the Disabled look and skip the range fill,
-  // as in the Figma grids.
+  // Days from other months are State=Disabled, as in the Figma grids: the
+  // button is disabled (no click, no hover, announced as unavailable) and
+  // skips the range fill. Only the days of the shown month are interactive.
   const outside = modifiers.outside
   const rangeMiddle = !outside && modifiers.range_middle
   const active = !outside && modifiers.selected && !rangeMiddle
@@ -228,7 +229,6 @@ function CalendarDayButton({
       data-range-middle={rangeMiddle || undefined}
       data-outside={outside || undefined}
       className={cn(
-        "data-outside:text-text-disabled",
         // Range: Active First / Active Last round only their outer side and
         // Range days fill the gap with Background/Accent/Soft.
         "data-range-end:not-data-range-start:rounded-l-none data-range-start:not-data-range-end:rounded-r-none",
@@ -236,6 +236,7 @@ function CalendarDayButton({
         className
       )}
       {...props}
+      disabled={outside || props.disabled}
     >
       {children}
     </CalendarButton>
