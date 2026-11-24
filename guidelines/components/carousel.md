@@ -32,7 +32,7 @@ Documented props only; every component also accepts the props of the element or 
 
 | Prop | Type | Description |
 | --- | --- | --- |
-| `getLabel?` | `(index: number) => string` | Accessible name of each indicator. |
+| `getLabel?` | `(index: number, count: number) => string` | The position read by screen readers, such as "Slide 2 of 5". |
 
 ## Types
 

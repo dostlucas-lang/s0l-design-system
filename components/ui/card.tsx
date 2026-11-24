@@ -24,10 +24,20 @@ import { Tag } from "@/components/ui/tag"
 //   surface (like the stacked Figma fills). It shows on hover and press, and
 //   only when the card is clickable; `data-pressed` forces it.
 // - Disabled is the whole card at 50% opacity, without the shadow.
-// - Focus is the 3px Border/Accent/Strong ring, 2px away from the card.
+// - Focus is the 3px Border/Accent/Strong ring, 2px away from the card. It
+//   shows on the card when its action (see CardAction) has keyboard focus.
+// - A clickable card isn't a button itself, so the More Actions and footer
+//   Buttons aren't nested inside one: a transparent <button> (CardAction)
+//   covers the surface, under the content, and the content lets clicks through
+//   to it except on its own controls.
 const cardVariants = cva(
-  "group/card relative isolate flex flex-col overflow-hidden rounded-md bg-background-surface text-left shadow-xs outline-none before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-border-secondary after:pointer-events-none after:absolute after:inset-0 after:-z-10 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-border-accent-strong focus-visible:outline-solid data-clickable:hover:after:bg-background-hover data-clickable:active:after:bg-background-hover data-pressed:after:bg-background-hover data-disabled:pointer-events-none data-disabled:opacity-50 data-disabled:shadow-none"
+  "group/card relative isolate flex flex-col overflow-hidden rounded-md bg-background-surface text-left shadow-xs outline-none before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-border-secondary after:pointer-events-none after:absolute after:inset-0 after:-z-10 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-border-accent-strong focus-visible:outline-solid has-[>[data-slot=card-action]:focus-visible]:outline-3 has-[>[data-slot=card-action]:focus-visible]:outline-offset-2 has-[>[data-slot=card-action]:focus-visible]:outline-border-accent-strong has-[>[data-slot=card-action]:focus-visible]:outline-solid data-clickable:hover:after:bg-background-hover data-clickable:active:after:bg-background-hover data-pressed:after:bg-background-hover data-disabled:pointer-events-none data-disabled:opacity-50 data-disabled:shadow-none"
 )
+
+// On a clickable card the content sits over CardAction: plain text lets the
+// click through to it, and the card's own controls stay on top and clickable.
+const overActionClassName =
+  "pointer-events-none [&_:is(a,button,input,select,textarea,label,[role=checkbox],[role=radio],[role=switch],[tabindex])]:pointer-events-auto [&_:is(a,button,input,select,textarea,label,[role=checkbox],[role=radio],[role=switch],[tabindex])]:relative [&_:is(a,button,input,select,textarea,label,[role=checkbox],[role=radio],[role=switch],[tabindex])]:z-1"
 
 // Figma .Card Footer: Button Primary / Button Secondary / Buttons fill the
 // width, 16px apart, under 8px top and 16px bottom padding. Button Ghost has
@@ -86,11 +96,13 @@ type CardProps = Omit<useRender.ComponentProps<"div">, "children"> &
     /** Figma State=Disabled. */
     disabled?: boolean
     /**
-     * Makes the whole surface clickable: `onClick` fires on it, it shows
-     * Pressed on hover and press, and it's focusable (a plain card gets
-     * `role="button"` and responds to Enter and Space). Defaults to true when
-     * `onClick` is set. When false, the surface does nothing and has no
-     * hover; nested Buttons stay clickable.
+     * Makes the whole surface clickable: `onClick` fires on it and it shows
+     * Pressed on hover and press. A transparent <button> covers the card and
+     * takes the click, the keyboard focus and the accessible name (the
+     * `label`, or `aria-label` when there's no label), so More Actions and the
+     * footer Buttons stay separate controls. Defaults to true when `onClick`
+     * is set. When false, the surface does nothing and has no hover; nested
+     * Buttons stay clickable.
      */
     clickable?: boolean
 
@@ -140,16 +152,19 @@ function Card({
   footerType = "default",
   render,
   onClick,
-  onKeyDown,
+  "aria-label": ariaLabel,
   ...props
 }: CardProps) {
   const isClickable = (clickable ?? onClick != null) && !disabled
-  // A native <a> or <button> passed through `render` already has its role and
-  // keyboard behavior; anything else (a div, an <li>) gets them here.
+  // A native <a> or <button> passed through `render` is the control itself:
+  // keep More Actions and the footer out of it. Anything else (a div, an <li>)
+  // gets CardAction.
   const isNativeControl =
     React.isValidElement(render) &&
     (render.type === "a" || render.type === "button")
-  const needsButtonRole = isClickable && !isNativeControl
+  const hasAction = isClickable && !isNativeControl
+  const labelId = React.useId()
+  const labelShown = !isShown(children) && isShown(label)
 
   // Figma .Card Body: the content and More Actions 12px apart, 16px padding.
   const body = isShown(children) ? (
@@ -168,6 +183,7 @@ function Card({
         <div className="flex w-full flex-col">
           {isShown(label) && (
             <div
+              id={labelId}
               data-slot="card-label"
               className="text-label-medium text-text-primary"
             >
@@ -204,13 +220,31 @@ function Card({
 
   const content = (
     <>
-      <div data-slot="card-body" className="flex gap-3 p-4">
+      {hasAction && (
+        <button
+          type="button"
+          data-slot="card-action"
+          aria-labelledby={labelShown && !ariaLabel ? labelId : undefined}
+          aria-label={ariaLabel}
+          onClick={
+            onClick as unknown as React.MouseEventHandler<HTMLButtonElement>
+          }
+          className="absolute inset-0 cursor-pointer rounded-[inherit] outline-none"
+        />
+      )}
+      <div
+        data-slot="card-body"
+        className={cn("flex gap-3 p-4", hasAction && overActionClassName)}
+      >
         {body}
       </div>
       {isShown(footer) && (
         <div
           data-slot="card-footer"
-          className={cardFooterVariants({ footerType })}
+          className={cn(
+            cardFooterVariants({ footerType }),
+            hasAction && overActionClassName
+          )}
         >
           {footer}
         </div>
@@ -224,25 +258,12 @@ function Card({
       {
         className: cn(cardVariants(), className),
         "aria-disabled": disabled || undefined,
-        ...(needsButtonRole && { role: "button", tabIndex: 0 }),
+        // Without CardAction the name stays on the card (a native control).
+        "aria-label": hasAction ? undefined : ariaLabel,
         // Disabled: nested buttons can't be reached either, and keep their own
         // colors under the 50% opacity, as in Figma.
         ...(disabled && { tabIndex: -1, inert: true }),
-        onClick: isClickable ? onClick : undefined,
-        onKeyDown: (event: React.KeyboardEvent<HTMLDivElement>) => {
-          onKeyDown?.(event)
-          // Only the card itself: keys on a nested button stay theirs.
-          if (
-            !needsButtonRole ||
-            event.defaultPrevented ||
-            event.target !== event.currentTarget
-          )
-            return
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault()
-            event.currentTarget.click()
-          }
-        },
+        onClick: isClickable && !hasAction ? onClick : undefined,
         children: content,
       },
       props

@@ -60,14 +60,35 @@ export const Variants: Story = {
     <div className="flex flex-col gap-10">
       {(["sm", "md"] as const).map((size) => (
         <div key={size} className="flex flex-col gap-10">
-          <Pagination size={size} page={1} pageCount={7} />
-          <Pagination size={size} page={1} pageCount={10} />
-          <Pagination size={size} page={5} pageCount={10} />
-          <Pagination size={size} page={10} pageCount={10} />
+          <Pagination
+            size={size}
+            page={1}
+            pageCount={7}
+            aria-label={`Paginação ${size}, 7 páginas`}
+          />
+          <Pagination
+            size={size}
+            page={1}
+            pageCount={10}
+            aria-label={`Paginação ${size}, primeira página`}
+          />
+          <Pagination
+            size={size}
+            page={5}
+            pageCount={10}
+            aria-label={`Paginação ${size}, página do meio`}
+          />
+          <Pagination
+            size={size}
+            page={10}
+            pageCount={10}
+            aria-label={`Paginação ${size}, última página`}
+          />
         </div>
       ))}
       <Pagination
         type="simple"
+        aria-label="Paginação simples"
         page={1}
         pageCount={10}
         itemCount={50}

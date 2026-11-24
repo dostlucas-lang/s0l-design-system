@@ -23,6 +23,7 @@ const meta = {
     step: 1,
     scale: true,
     disabled: false,
+    "aria-label": "Volume",
     onValueChange: fn(),
   },
   argTypes: {
@@ -57,14 +58,22 @@ export const Variants: Story = {
   parameters: { controls: { disable: true } },
   render: () => (
     <div className="flex w-[472px] flex-col gap-10">
-      <Slider defaultValue={50} scale />
-      <Slider defaultValue={[25, 75]} scale />
+      <Slider defaultValue={50} scale aria-label="Volume" />
+      <Slider
+        defaultValue={[25, 75]}
+        scale
+        getThumbLabel={(index) => (index === 0 ? "Mínimo" : "Máximo")}
+      />
     </div>
   ),
 }
 
 export const Range: Story = {
-  args: { value: [25, 75], step: 5 },
+  args: {
+    value: [25, 75],
+    step: 5,
+    getThumbLabel: (index: number) => (index === 0 ? "Mínimo" : "Máximo"),
+  },
 }
 
 export const WithoutScale: Story = {

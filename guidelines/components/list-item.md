@@ -22,7 +22,8 @@ Mirrors the Figma List Item: Type (Discreet / Divider / Container) × State (Def
 - Pressed is Background/Hover: a fill on Divider, an overlay painted by ::after on top of the surface on Container (like the stacked Figma fills). Figma has no Pressed Discreet. It shows on hover and press, and only when the item is clickable; `data-pressed` forces it.
 - The Divider and Container strokes are Inside in Figma: painted by ::before over the content, so they take no room. The ribbon sits flush against the edge under the stroke, and the content starts 16px after the ribbon (or after the edge when the ribbon is hidden).
 - Disabled is the whole item at 50% opacity (Container also drops its shadow).
-- Focus is the 3px Border/Accent/Strong ring, 2px away from the item, with the Border/Radius/Focus corners on the square types.
+- Focus is the 3px Border/Accent/Strong ring, 2px away from the item, with the Border/Radius/Focus corners on the square types. It shows on the item when its action (see `clickable`) has keyboard focus.
+- A clickable item isn't a button itself, so its checkbox and action Buttons aren't nested inside one: a transparent <button> covers the item, under the content, and the content lets clicks through to it except on its own controls.
 
 ## Variants
 
@@ -57,13 +58,14 @@ Documented props only; every component also accepts the props of the element or 
 | `icon?` | `IconSvgElement` | Figma Show Icon: a Hugeicons icon in the Icon Colors container. |
 | `iconColor?` | `VariantProps<typeof iconColorsVariants>["color"]` | Color of the Icon Colors container (Figma Icon Colors Color). |
 | `contentCustom?` | `React.ReactNode` | Figma Content Custom=True: replaces the whole left content. |
+| `labelId?` | `string` | The id of the label, so a covering action can take it as its name. |
 
 `ListItemProps`:
 
 | Prop | Type | Description |
 | --- | --- | --- |
 | `disabled?` | `boolean` | Figma State=Disabled. |
-| `clickable?` | `boolean` | Makes the whole item clickable: `onClick` fires on it, it shows Pressed on hover and press, and it's focusable (a plain item gets `role="button"` and responds to Enter and Space). Defaults to true when `onClick` is set. When false, the item does nothing and has no hover; nested Buttons and Checkboxes stay clickable. |
+| `clickable?` | `boolean` | Makes the whole item clickable: `onClick` fires on it and it shows Pressed on hover and press. A transparent <button> covers the item and takes the click, the keyboard focus and the accessible name (the `label`, or `aria-label` when there's no label), so a checkbox and the action Buttons stay separate controls. Defaults to true when `onClick` is set. When false, the item does nothing and has no hover; nested Buttons and Checkboxes stay clickable. |
 | `showRibbon?` | `boolean` | Figma Show Ribbon (Type=Container only). |
 | `textRight?` | `React.ReactNode` | Figma Show Text Right: Body/Medium in Text/Secondary. |
 | `textRightTrend?` | `ListItemTrend` | Figma Show Trend Icon: the trend icon before the right text. |

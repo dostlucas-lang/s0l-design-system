@@ -308,6 +308,7 @@ export const CustomBody: Story = {
   render: ({ onClick, onAction }) => (
     <Card
       onClick={onClick}
+      aria-label="Saldo disponível"
       footer={
         <Button
           variant="secondary"

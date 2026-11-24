@@ -445,12 +445,7 @@ const meta = {
                 dragHandle={parts && args.showDragHandle}
                 checkbox={
                   parts &&
-                  args.showCheckbox && (
-                    <Checkbox
-                      aria-label={f.label}
-                      onClick={(event) => event.stopPropagation()}
-                    />
-                  )
+                  args.showCheckbox && <Checkbox aria-label={f.label} />
                 }
                 icon={
                   parts && args.showIcon
