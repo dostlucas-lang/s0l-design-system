@@ -20,7 +20,7 @@ From the Storybook story; names like `args` or `label` are the story controls.
 
 ## Figma notes
 
-Mirrors the Figma Link component: Color (Neutral / Accent, named Brand in Figma / Danger / Inverse) × Size (Small / Medium) × State (Default / Hover / Disabled), with Icon Left and Icon Right. Hover underlines the label; Focus is the 3px Border/Accent/Strong ring 2px away, with Border/Radius/Small. Renders an <a>; pass `render` for a router link (e.g. Next's <Link>).
+Mirrors the Figma Link component: Color (Neutral / Accent / Danger / Inverse) × Size (Small / Medium) × State (Default / Hover / Disabled), with Icon Left and Icon Right. Accent and Danger use the Standard text and icon tokens. Hover underlines the label; Focus is the 3px Border/Accent/Strong ring 2px away, with Border/Radius/Small. Renders an <a>; pass `render` for a router link (e.g. Next's <Link>).
 
 ## Variants
 

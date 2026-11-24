@@ -90,6 +90,7 @@ Documented props only; every component also accepts the props of the element or 
 | Prop | Type | Description |
 | --- | --- | --- |
 | `title?` | `boolean` | Renders the Title=True cell, in the header row. |
+| `loadingLabel?` | `React.ReactNode` | The name a header cell keeps for screen readers while the table loads and its content turns into the skeleton. |
 
 `TableHeadProps`:
 

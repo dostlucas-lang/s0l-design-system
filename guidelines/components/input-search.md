@@ -23,7 +23,7 @@ From the Storybook story; names like `args` or `label` are the story controls.
 
 ## Figma notes
 
-Mirrors the Figma Input Search component: Input Text with the Search icon, no label and no error state. The browser's own clear button is hidden so only Button Clear shows.
+Mirrors the Figma Input Search component: Input Text with the Search icon, no label and no error state. The browser's own clear button is hidden so only Button Clear shows. With no visible label, the field is named by `aria-label`, which defaults to the placeholder.
 
 ## Types
 

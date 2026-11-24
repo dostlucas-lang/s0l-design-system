@@ -34,15 +34,21 @@ import { Tag, type TagProps } from "@/components/ui/tag"
 // - Disabled is the whole item at 50% opacity (Container also drops its
 //   shadow).
 // - Focus is the 3px Border/Accent/Strong ring, 2px away from the item, with
-//   the Border/Radius/Focus corners on the square types.
+//   the Border/Radius/Focus corners on the square types. It shows on the item
+//   when its action (see `clickable`) has keyboard focus.
+// - A clickable item isn't a button itself, so its checkbox and action Buttons
+//   aren't nested inside one: a transparent <button> covers the item, under
+//   the content, and the content lets clicks through to it except on its own
+//   controls.
 const listItemVariants = cva(
-  "group/list-item relative isolate flex w-full items-center text-left outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-border-accent-strong focus-visible:outline-solid data-disabled:pointer-events-none data-disabled:opacity-50",
+  "group/list-item relative isolate flex w-full items-center text-left outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-border-accent-strong focus-visible:outline-solid has-[>[data-slot=list-item-action]:focus-visible]:outline-3 has-[>[data-slot=list-item-action]:focus-visible]:outline-offset-2 has-[>[data-slot=list-item-action]:focus-visible]:outline-border-accent-strong has-[>[data-slot=list-item-action]:focus-visible]:outline-solid data-disabled:pointer-events-none data-disabled:opacity-50",
   {
     variants: {
       type: {
-        discreet: "focus-visible:rounded-focus",
+        discreet:
+          "focus-visible:rounded-focus has-[>[data-slot=list-item-action]:focus-visible]:rounded-focus",
         divider:
-          "py-3 before:pointer-events-none before:absolute before:inset-0 before:border-b before:border-border-secondary focus-visible:rounded-focus data-clickable:hover:bg-background-hover data-clickable:active:bg-background-hover data-pressed:bg-background-hover",
+          "py-3 before:pointer-events-none before:absolute before:inset-0 before:border-b before:border-border-secondary focus-visible:rounded-focus has-[>[data-slot=list-item-action]:focus-visible]:rounded-focus data-clickable:hover:bg-background-hover data-clickable:active:bg-background-hover data-pressed:bg-background-hover",
         container:
           "overflow-hidden rounded-md bg-background-surface shadow-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-border-secondary after:pointer-events-none after:absolute after:inset-0 after:-z-10 data-clickable:hover:after:bg-background-hover data-clickable:active:after:bg-background-hover data-pressed:after:bg-background-hover data-disabled:shadow-none",
       },
@@ -52,6 +58,12 @@ const listItemVariants = cva(
     },
   }
 )
+
+// On a clickable item the content sits over the action button: plain text lets
+// the click through to it, and the item's own controls stay on top and
+// clickable.
+const overActionClassName =
+  "pointer-events-none [&_:is(a,button,input,select,textarea,label,[role=checkbox],[role=radio],[role=switch],[tabindex])]:pointer-events-auto [&_:is(a,button,input,select,textarea,label,[role=checkbox],[role=radio],[role=switch],[tabindex])]:relative [&_:is(a,button,input,select,textarea,label,[role=checkbox],[role=radio],[role=switch],[tabindex])]:z-1"
 
 // Figma .Ribbon: the 8px strip on the left of a Container item.
 const ribbonVariants = cva("w-2 shrink-0 self-stretch", {
@@ -137,6 +149,8 @@ type ListItemContentLeftProps = {
   contentCustom?: React.ReactNode
   /** @deprecated Use `contentCustom`. */
   contentLeft?: React.ReactNode
+  /** The id of the label, so a covering action can take it as its name. */
+  labelId?: string
 }
 
 // Figma .List Item Content Left, shared by List Item and the Accordion header.
@@ -154,6 +168,7 @@ function ListItemContentLeft({
   iconColor = "accent",
   contentCustom,
   contentLeft,
+  labelId,
 }: ListItemContentLeftProps) {
   // `contentLeft` is the old name of `contentCustom`, still accepted.
   const custom = contentCustom ?? contentLeft
@@ -191,6 +206,7 @@ function ListItemContentLeft({
             <span className="flex w-full flex-col">
               {isShown(label) && (
                 <span
+                  id={labelId}
                   data-slot="list-item-label"
                   className="min-h-6 text-label-medium text-text-primary"
                 >
@@ -234,11 +250,13 @@ type ListItemProps = Omit<useRender.ComponentProps<"div">, "children"> &
     /** Figma State=Disabled. */
     disabled?: boolean
     /**
-     * Makes the whole item clickable: `onClick` fires on it, it shows Pressed
-     * on hover and press, and it's focusable (a plain item gets
-     * `role="button"` and responds to Enter and Space). Defaults to true when
-     * `onClick` is set. When false, the item does nothing and has no hover;
-     * nested Buttons and Checkboxes stay clickable.
+     * Makes the whole item clickable: `onClick` fires on it and it shows
+     * Pressed on hover and press. A transparent <button> covers the item and
+     * takes the click, the keyboard focus and the accessible name (the
+     * `label`, or `aria-label` when there's no label), so a checkbox and the
+     * action Buttons stay separate controls. Defaults to true when `onClick`
+     * is set. When false, the item does nothing and has no hover; nested
+     * Buttons and Checkboxes stay clickable.
      */
     clickable?: boolean
     /** Figma Show Ribbon (Type=Container only). */
@@ -289,16 +307,19 @@ function ListItem({
   contentRight,
   render,
   onClick,
-  onKeyDown,
+  "aria-label": ariaLabel,
   ...props
 }: ListItemProps) {
   const isClickable = (clickable ?? onClick != null) && !disabled
-  // A native <a> or <button> passed through `render` already has its role and
-  // keyboard behavior; anything else (a div, an <li>) gets them here.
+  // A native <a> or <button> passed through `render` is the control itself:
+  // keep checkboxes and action Buttons out of it. Anything else (a div, an
+  // <li>) gets the covering action button.
   const isNativeControl =
     React.isValidElement(render) &&
     (render.type === "a" || render.type === "button")
-  const needsButtonRole = isClickable && !isNativeControl
+  const hasAction = isClickable && !isNativeControl
+  const labelId = React.useId()
+  const labelShown = !isShown(contentCustom ?? contentLeft) && isShown(label)
 
   // `contentRight` is the old name of `contentCustomRight`, still accepted.
   const customRight = contentCustomRight ?? contentRight
@@ -367,6 +388,18 @@ function ListItem({
   // Figma Content: left and right 16px apart; Container pads it 16 × 12px.
   const content = (
     <>
+      {hasAction && (
+        <button
+          type="button"
+          data-slot="list-item-action"
+          aria-labelledby={labelShown && !ariaLabel ? labelId : undefined}
+          aria-label={ariaLabel}
+          onClick={
+            onClick as unknown as React.MouseEventHandler<HTMLButtonElement>
+          }
+          className="absolute inset-0 cursor-pointer rounded-[inherit] outline-none"
+        />
+      )}
       {type === "container" && showRibbon && (
         <span
           data-slot="list-item-ribbon"
@@ -377,10 +410,12 @@ function ListItem({
       <div
         className={cn(
           "flex min-w-0 flex-1 items-start gap-4",
-          type === "container" && "px-4 py-3"
+          type === "container" && "px-4 py-3",
+          hasAction && overActionClassName
         )}
       >
         <ListItemContentLeft
+          labelId={labelId}
           label={label}
           description={description}
           details={details}
@@ -404,25 +439,12 @@ function ListItem({
       {
         className: cn(listItemVariants({ type }), className),
         "aria-disabled": disabled || undefined,
-        ...(needsButtonRole && { role: "button", tabIndex: 0 }),
+        // Without the action button the name stays on the item (a native control).
+        "aria-label": hasAction ? undefined : ariaLabel,
         // Disabled: nested checkboxes and buttons can't be reached either, and
         // keep their own colors under the 50% opacity, as in Figma.
         ...(disabled && { tabIndex: -1, inert: true }),
-        onClick: isClickable ? onClick : undefined,
-        onKeyDown: (event: React.KeyboardEvent<HTMLDivElement>) => {
-          onKeyDown?.(event)
-          // Only the item itself: keys on a nested checkbox or button stay theirs.
-          if (
-            !needsButtonRole ||
-            event.defaultPrevented ||
-            event.target !== event.currentTarget
-          )
-            return
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault()
-            event.currentTarget.click()
-          }
-        },
+        onClick: isClickable && !hasAction ? onClick : undefined,
         children: content,
       },
       props

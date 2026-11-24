@@ -21,7 +21,7 @@ From the Storybook story; names like `args` or `label` are the story controls.
 
 ## Figma notes
 
-Mirrors the Figma Bottom Bar: a Background/Surface pill with Shadow/Large and 8px padding, holding 2, 3 or 4 .Bottom Bar Button items side by side (Figma Items=2 / 3 / 4). It only draws the bar: pin it to the bottom of the screen where it's used.
+Mirrors the Figma Bottom Bar: a Background/Surface pill with Shadow/Large, a 1px Border/Secondary stroke and 8px padding, holding 2, 3 or 4 .Bottom Bar Button items side by side (Figma Items=2 / 3 / 4). It only draws the bar: pin it to the bottom of the screen where it's used. The stroke is Inside in Figma: an inset ring, so it takes no space and stacks with the shadow.
 
 Parts:
 - `BottomBarItem`: One destination of the Bottom Bar. Renders a `<button>`; pass `render` (an `<a>` or a Next.js `<Link>`) to navigate instead.

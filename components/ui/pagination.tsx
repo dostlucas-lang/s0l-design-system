@@ -158,6 +158,9 @@ function Pagination({
   )
 }
 
+// The <nav> landmark is named "pagination". With more than one on a page,
+// give each its own `aria-label` (such as "Resultados, paginação") so they
+// can be told apart.
 function PaginationRoot({
   className,
   size = "md",

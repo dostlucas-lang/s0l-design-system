@@ -1,5 +1,8 @@
 import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion"
-import { ArrowDown01Icon } from "@hugeicons/core-free-icons"
+import {
+  ArrowDown01Icon,
+  DragDropVerticalIcon,
+} from "@hugeicons/core-free-icons"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { HugeiconsIcon } from "@/components/ui/icon"
@@ -117,10 +120,11 @@ function AccordionItem({
 }
 
 // The header is the Figma .List Item Content Left (the same props as List
-// Item, with `children` as the label) and the Chevron Down, 12px apart. With a
-// checkbox the trigger renders a <div role="button">, since a checkbox can't
-// sit inside a <button>; stop propagation in its onClick so it doesn't toggle
-// the item. Figma has no Disabled: like List Item, it's the header at 50%.
+// Item, with `children` as the label) and the Chevron Down, 12px apart. A
+// checkbox can't sit inside the trigger <button>, so it (and the drag handle
+// before it) goes next to the trigger, in the header: the checkbox and the
+// trigger are two separate controls. Figma has no Disabled: like List Item,
+// it's the header at 50%.
 function AccordionTrigger({
   className,
   children,
@@ -138,13 +142,35 @@ function AccordionTrigger({
   ...props
 }: AccordionPrimitive.Trigger.Props & Omit<ListItemContentLeftProps, "label">) {
   const hasCheckbox = checkbox != null && typeof checkbox !== "boolean"
+  const custom = contentCustom ?? contentLeft
+  // A custom content replaces the checkbox too, as in List Item.
+  const checkboxOutside =
+    hasCheckbox && (custom == null || typeof custom === "boolean")
   return (
-    <AccordionPrimitive.Header className="flex">
+    <AccordionPrimitive.Header
+      className={cn("flex", checkboxOutside && "items-start gap-3")}
+    >
+      {checkboxOutside && (
+        <span
+          data-slot="accordion-checkbox"
+          className="flex max-h-18 min-h-16 shrink-0 items-center gap-3 self-stretch py-3 group-data-[variant=container]/accordion:pl-4 group-data-disabled/accordion-item:opacity-50"
+        >
+          {dragHandle && (
+            <HugeiconsIcon
+              data-slot="list-item-drag-handle"
+              icon={DragDropVerticalIcon}
+              aria-hidden="true"
+              className="size-5 text-icon-secondary"
+            />
+          )}
+          {checkbox}
+        </span>
+      )}
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
-        {...(hasCheckbox && { nativeButton: false, render: <div /> })}
         className={cn(
           "group/accordion-trigger flex flex-1 items-start gap-3 rounded-md py-3 text-left outline-none group-data-[variant=container]/accordion:px-4 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-border-accent-strong focus-visible:outline-solid data-disabled:opacity-50",
+          checkboxOutside && "group-data-[variant=container]/accordion:pl-0",
           className
         )}
         {...props}
@@ -156,8 +182,8 @@ function AccordionTrigger({
           detailsTrend={detailsTrend}
           tag={tag}
           tagColor={tagColor}
-          dragHandle={dragHandle}
-          checkbox={checkbox}
+          dragHandle={checkboxOutside ? false : dragHandle}
+          checkbox={checkboxOutside ? undefined : checkbox}
           icon={icon}
           iconColor={iconColor}
           contentCustom={contentCustom ?? contentLeft}

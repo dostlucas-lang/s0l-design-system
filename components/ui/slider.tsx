@@ -16,6 +16,9 @@ import { cn } from "@/lib/utils"
 // Disabled isn't in Figma; it swaps the accent for the disabled tokens, with a
 // Surface fill under the translucent handle so the track doesn't show through.
 // Horizontal only: the Figma Slider has no vertical variant.
+// Accessible name: each handle is an <input type="range"> and needs one. Pass
+// `aria-label` (or `aria-labelledby`, the id of a visible label); a range
+// names each handle with `getThumbLabel`, such as "Minimum" and "Maximum".
 type SliderProps = Omit<SliderPrimitive.Root.Props, "orientation"> & {
   /**
    * Figma "Scale": `true` shows 5 evenly spaced labels from min to max; an
@@ -24,6 +27,12 @@ type SliderProps = Omit<SliderPrimitive.Root.Props, "orientation"> & {
   scale?: boolean | number[]
   /** Formats each scale label. */
   formatScaleLabel?: (value: number) => React.ReactNode
+  /** What the slider sets, read by screen readers on each handle. */
+  "aria-label"?: string
+  /** The id of a visible label naming the slider. */
+  "aria-labelledby"?: string
+  /** The name of each handle of a range, by index, such as "Minimum". */
+  getThumbLabel?: (index: number) => string
 }
 
 function Slider({
@@ -34,6 +43,9 @@ function Slider({
   max = 100,
   scale = false,
   formatScaleLabel = (mark) => mark,
+  "aria-label": ariaLabel,
+  "aria-labelledby": ariaLabelledBy,
+  getThumbLabel,
   ...props
 }: SliderProps) {
   const values = Array.isArray(value)
@@ -76,6 +88,9 @@ function Slider({
             data-slot="slider-thumb"
             key={index}
             index={index}
+            aria-label={ariaLabel}
+            aria-labelledby={ariaLabelledBy}
+            getAriaLabel={getThumbLabel}
             className="block size-5 shrink-0 cursor-grab rounded-full bg-background-accent-strong shadow-xs select-none active:cursor-grabbing has-focus-visible:outline-3 has-focus-visible:outline-offset-2 has-focus-visible:outline-border-accent-strong has-focus-visible:outline-solid data-disabled:cursor-not-allowed data-disabled:bg-background-surface data-disabled:bg-linear-to-r data-disabled:from-background-disabled-strong data-disabled:to-background-disabled-strong data-disabled:shadow-none"
           />
         ))}

@@ -29,7 +29,7 @@ From the Storybook story; names like `args` or `label` are the story controls.
 Mirrors the Figma Slider component: one value (Property 1=False) or a range with two handles (Property 1=True), plus the optional Scale below.
 - Track: 8px pill. Figma points it at an unpublished "Background/Alpha Color*" variable, so it uses Background/Disabled/Soft, the closest token.
 - Fill and .Slider Handle (20px): Background/Accent/Strong, Shadow/X-Small. The handle is centered on the value, overflowing the 8px track, and the root keeps 10px at each end so it stays inside, like the Figma frame.
-- Scale: Body/Small labels in Text/Secondary, 12px below the track. Disabled isn't in Figma; it swaps the accent for the disabled tokens, with a Surface fill under the translucent handle so the track doesn't show through. Horizontal only: the Figma Slider has no vertical variant.
+- Scale: Body/Small labels in Text/Secondary, 12px below the track. Disabled isn't in Figma; it swaps the accent for the disabled tokens, with a Surface fill under the translucent handle so the track doesn't show through. Horizontal only: the Figma Slider has no vertical variant. Accessible name: each handle is an <input type="range"> and needs one. Pass `aria-label` (or `aria-labelledby`, the id of a visible label); a range names each handle with `getThumbLabel`, such as "Minimum" and "Maximum".
 
 ## Props
 
@@ -41,6 +41,9 @@ Documented props only; every component also accepts the props of the element or 
 | --- | --- | --- |
 | `scale?` | `boolean \| number[]` | Figma "Scale": `true` shows 5 evenly spaced labels from min to max; an array shows those values. |
 | `formatScaleLabel?` | `(value: number) => React.ReactNode` | Formats each scale label. |
+| `"aria-label"?` | `string` | What the slider sets, read by screen readers on each handle. |
+| `"aria-labelledby"?` | `string` | The id of a visible label naming the slider. |
+| `getThumbLabel?` | `(index: number) => string` | The name of each handle of a range, by index, such as "Minimum". |
 
 ## Types
 

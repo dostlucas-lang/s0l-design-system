@@ -579,6 +579,11 @@ type TableCellBaseProps = Omit<React.ComponentProps<"td">, "width" | "title"> &
     title?: boolean
     slot: string
     cellType: NonNullable<VariantProps<typeof tableCellVariants>["type"]>
+    /**
+     * The name a header cell keeps for screen readers while the table loads
+     * and its content turns into the skeleton.
+     */
+    loadingLabel?: React.ReactNode
   }
 
 // Every cell type goes through here: it takes care of the title background, the
@@ -593,6 +598,7 @@ function TableCellBase({
   className,
   style,
   children,
+  loadingLabel,
   ...props
 }: TableCellBaseProps) {
   const { loading, overflowMethod } = React.useContext(TableContext)
@@ -638,7 +644,15 @@ function TableCellBase({
       {...props}
     >
       {loading ? (
-        <Skeleton className="h-4 w-full min-w-8 rounded-full" />
+        <>
+          <Skeleton
+            aria-hidden="true"
+            className="h-4 w-full min-w-8 rounded-full"
+          />
+          {title && loadingLabel != null && (
+            <span className="sr-only">{loadingLabel}</span>
+          )}
+        </>
       ) : (
         children
       )}
@@ -729,6 +743,7 @@ function TableHead({
       title
       slot="table-head"
       cellType={align === "right" ? "number" : "text"}
+      loadingLabel={children}
       fixed={fixed}
       ref={cellRef}
       aria-sort={sortable && !fixedSort && sort !== "none" ? sort : undefined}
@@ -929,6 +944,7 @@ function TableCellSelection({
       title={title}
       slot="table-cell-selection"
       cellType="selection"
+      loadingLabel={label}
       {...props}
     >
       <div className="flex size-11 items-center justify-center">
@@ -979,6 +995,7 @@ function TableCellAccordion({
       title={title}
       slot="table-cell-accordion"
       cellType="accordion"
+      loadingLabel={label}
       {...props}
     >
       {title ? (
@@ -1024,6 +1041,7 @@ function TableCellActions({
       title={title}
       slot="table-cell-actions"
       cellType="actions"
+      loadingLabel={label}
       {...props}
     >
       {title ? (

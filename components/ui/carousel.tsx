@@ -263,16 +263,18 @@ function getIndicatorWindow(count: number, selectedIndex: number) {
 
 // Figma Indicators: 12px dots 12px apart, Background/Accent/Strong for the
 // selected slide and Background/Disabled/Strong for the rest; an Overflow
-// one is 8px. Each one is a button that goes to its slide.
+// one is 8px. They only show where the carousel is: the arrows and the
+// keyboard move it, so the dots aren't controls. Screen readers get the
+// position from a hidden "Slide 2 of 5" text, announced when it changes.
 function CarouselIndicators({
   className,
-  getLabel = (index) => `Go to slide ${index + 1}`,
+  getLabel = (index, count) => `Slide ${index + 1} of ${count}`,
   ...props
 }: React.ComponentProps<"div"> & {
-  /** Accessible name of each indicator. */
-  getLabel?: (index: number) => string
+  /** The position read by screen readers, such as "Slide 2 of 5". */
+  getLabel?: (index: number, count: number) => string
 }) {
-  const { count, selectedIndex, scrollTo } = useCarousel()
+  const { count, selectedIndex } = useCarousel()
 
   return (
     <div
@@ -280,19 +282,21 @@ function CarouselIndicators({
       className={cn("flex items-center gap-3", className)}
       {...props}
     >
+      {count > 0 && (
+        <span className="sr-only" aria-live="polite" aria-atomic="true">
+          {getLabel(selectedIndex, count)}
+        </span>
+      )}
       {getIndicatorWindow(count, selectedIndex).map(({ index, overflow }) => {
         const active = index === selectedIndex
         return (
-          <button
+          <span
             key={index}
-            type="button"
+            aria-hidden="true"
             data-slot="carousel-indicator"
             data-active={active || undefined}
             data-overflow={overflow || undefined}
-            aria-label={getLabel(index)}
-            aria-current={active || undefined}
-            onClick={() => scrollTo(index)}
-            className="size-3 shrink-0 rounded-full bg-background-disabled-strong outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-border-accent-strong focus-visible:outline-solid data-overflow:size-2 data-active:bg-background-accent-strong"
+            className="size-3 shrink-0 rounded-full bg-background-disabled-strong data-overflow:size-2 data-active:bg-background-accent-strong"
           />
         )
       })}

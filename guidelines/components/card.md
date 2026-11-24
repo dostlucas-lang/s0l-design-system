@@ -22,7 +22,8 @@ Mirrors the Figma Card: State (Default / Pressed / Disabled) + Focus, with the .
 - The stroke is Inside in Figma: painted by ::before over the content, so it takes no room.
 - Pressed is Background/Hover, an overlay painted by ::after on top of the surface (like the stacked Figma fills). It shows on hover and press, and only when the card is clickable; `data-pressed` forces it.
 - Disabled is the whole card at 50% opacity, without the shadow.
-- Focus is the 3px Border/Accent/Strong ring, 2px away from the card.
+- Focus is the 3px Border/Accent/Strong ring, 2px away from the card. It shows on the card when its action (see CardAction) has keyboard focus.
+- A clickable card isn't a button itself, so the More Actions and footer Buttons aren't nested inside one: a transparent <button> (CardAction) covers the surface, under the content, and the content lets clicks through to it except on its own controls.
 
 Parts:
 - `CardMoreActions`: Figma Show More Actions: the Small icon-only Ghost Button with More Vertical. Clicks don't reach the card; use it as a Dropdown trigger.
@@ -44,7 +45,7 @@ Documented props only; every component also accepts the props of the element or 
 | Prop | Type | Description |
 | --- | --- | --- |
 | `disabled?` | `boolean` | Figma State=Disabled. |
-| `clickable?` | `boolean` | Makes the whole surface clickable: `onClick` fires on it, it shows Pressed on hover and press, and it's focusable (a plain card gets `role="button"` and responds to Enter and Space). Defaults to true when `onClick` is set. When false, the surface does nothing and has no hover; nested Buttons stay clickable. |
+| `clickable?` | `boolean` | Makes the whole surface clickable: `onClick` fires on it and it shows Pressed on hover and press. A transparent <button> covers the card and takes the click, the keyboard focus and the accessible name (the `label`, or `aria-label` when there's no label), so More Actions and the footer Buttons stay separate controls. Defaults to true when `onClick` is set. When false, the surface does nothing and has no hover; nested Buttons stay clickable. |
 | `label?` | `React.ReactNode` | Figma Label (the title): Label/Medium in Text/Primary. |
 | `description?` | `React.ReactNode` | Figma Show Description: Body/Medium in Text/Secondary. |
 | `details?` | `React.ReactNode` | Figma Show Details: Body/Small in Text/Secondary. |
